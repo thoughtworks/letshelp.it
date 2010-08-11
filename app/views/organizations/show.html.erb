@@ -1,0 +1,55 @@
+<p>
+  <b>Name:</b>
+  <%=h @organization.name %>
+</p>
+
+<p>
+  <b>Responsible:</b>
+  <%=h @organization.responsible %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @organization.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @organization.email %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%=h @organization.website %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @organization.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @organization.city %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%=h @organization.country %>
+</p>
+
+  <p>
+    <b>Tags:</b>
+	<% @tags.each do |tag| -%>
+<li><%= check_box_tag "organization[tag_ids][]", tag.id, has_tag?(tag) -%> <%= tag.name -%></li>
+  <% end -%>
+  </p>
+
+<p>
+  <b>Needs:</b>
+  <%=h @organization.needs %>
+</p>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

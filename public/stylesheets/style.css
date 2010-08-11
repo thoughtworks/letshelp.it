@@ -1,0 +1,84 @@
+body {
+	background: #8d8d8d;
+	text-align: center;
+}
+
+#container {
+	background: #d2d2d2;
+	margin: 0 auto;
+	text-align: left;
+	width: 960px;
+	<!--
+		border: 10px solid;
+		border-color: #5a6787;
+	-->
+}
+
+#header {
+	background: #000000;
+	padding: 10px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+#logo {
+	float: left;
+	margin: 10px;
+	padding: 0;
+	color: #ffffff;
+	font-size: 32px;
+	font-family: "Courier New";
+}
+
+#registration {
+	float: right;
+}
+
+#subheader {
+	padding: 10px;
+	background: #8d0000;
+}
+
+#search_area {
+}
+
+#content {
+}
+
+#organizations {
+	overflow: hidden;
+}
+
+#organizations div.organization {
+	border: 1px solid #000000;
+	margin: 10px;
+	padding: 10px;
+	width: 430px;
+	background: #5386bd;
+	line-height: 5px;
+	color: #ffffff;
+}
+
+a:link, a:visited {
+	color:#700B00;
+	background-color:transparent
+}
+
+a:hover, a:active {
+	color:#FFcccc;
+	background-color:transparent
+}
+
+#organizations div.left {
+	float: left;
+}
+
+#organizations div.right {
+	float: right;
+}
+
+#footer {
+	height: 10px;
+	margin: 10px;
+}
