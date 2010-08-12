@@ -1,23 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  responsible: MyString
-  phone: MyString
-  email: MyString
-  website: MyString
-  address: MyString
-  city: MyString
-  country: MyString
-  needs: MyText
+redcross:
+  name: Red Cross
+  responsible: John Armless
+  phone: 555555
+  email: john@redcross_armless.com
+  website: http://armless_redcross.com
+  address: 123 road st
+  city: Springfield
+  country: USA
+  tags: (:food)
+  needs: Lots of rice
 
-two:
-  name: MyString
-  responsible: MyString
-  phone: MyString
-  email: MyString
-  website: MyString
-  address: MyString
-  city: MyString
-  country: MyString
-  needs: MyText
+wwf:
+  name: WWF Brasil
+  responsible: Godines Rodriguez
+  phone: 2345678
+  email: godines@chavolino_wwf.com
+  website: http://godines_brasil.com.br
+  address: Rua das Palmeiras
+  city: Tamgamandapio
+  country: Brazil
+  tags: (:money)
+  needs: money

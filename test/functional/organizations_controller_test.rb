@@ -20,23 +20,23 @@ class OrganizationsControllerTest < ActionController::TestCase
   end
 
   test "should show organization" do
-    get :show, :id => organizations(:one).to_param
+    get :show, :id => organizations(:wwf).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => organizations(:one).to_param
+    get :edit, :id => organizations(:redcross).to_param
     assert_response :success
   end
 
   test "should update organization" do
-    put :update, :id => organizations(:one).to_param, :organization => {:name => "updated title" }
+    put :update, :id => organizations(:wwf).to_param, :organization => {:name => "updated title" }
     assert_redirected_to organization_path(assigns(:organization))
   end
 
   test "should destroy organization" do
     assert_difference('Organization.count', -1) do
-      delete :destroy, :id => organizations(:one).to_param
+      delete :destroy, :id => organizations(:wwf).to_param
     end
     assert_redirected_to organizations_path
   end
