@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
 
   before_filter :find_organization, :only => [:show, :edit, :update, :destroy]
-  before_filter :find_all_tags, :only => [:new, :show, :edit]
+  before_filter :find_all_tags, :only => [:new, :show, :create, :edit]
   
 private
   def find_organization

@@ -40,4 +40,9 @@ class OrganizationsControllerTest < ActionController::TestCase
     end
     assert_redirected_to organizations_path
   end
+
+  test "should show tags when there is a validation error while creating a organization" do
+    put :create, :organization => {}
+    assert_response :success 
+  end
 end
