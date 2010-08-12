@@ -1,5 +1,5 @@
 log/*
 *.DS_Store
 .rvmrc
-db/test.sqlite3
+*.sqlite3
 
