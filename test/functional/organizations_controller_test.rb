@@ -16,7 +16,6 @@ class OrganizationsControllerTest < ActionController::TestCase
     assert_difference('Organization.count') do
       post :create, :organization => { :name => "title", :responsible => "responsible", :city => "city", :country => "country"}
     end
-
     assert_redirected_to organization_path(assigns(:organization))
   end
 
@@ -31,7 +30,7 @@ class OrganizationsControllerTest < ActionController::TestCase
   end
 
   test "should update organization" do
-    put :update, :id => organizations(:one).to_param, :organization => { }
+    put :update, :id => organizations(:one).to_param, :organization => {:name => "updated title" }
     assert_redirected_to organization_path(assigns(:organization))
   end
 
@@ -39,7 +38,6 @@ class OrganizationsControllerTest < ActionController::TestCase
     assert_difference('Organization.count', -1) do
       delete :destroy, :id => organizations(:one).to_param
     end
-
     assert_redirected_to organizations_path
   end
 end
