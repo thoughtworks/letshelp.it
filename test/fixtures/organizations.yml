@@ -9,7 +9,7 @@ redcross:
   address: 123 road st
   city: Springfield
   country: USA
-  tags: (:food)
+  tags: (:food, :money)
   needs: Lots of rice
 
 wwf:

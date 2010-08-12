@@ -33,9 +33,5 @@ class OrganizationTest < ActiveSupport::TestCase
     end
     
     assert !rc.save, 'should not save duplicated red cross'
-  end 
-
-  test 'should' do
-    assert_equal organizations(:redcross).name, 'Red Cross', 'Should have Red Cross as name'
   end
 end
