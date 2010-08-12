@@ -1,11 +1,12 @@
 Let's Help It!
 --------------
 
-
-
+A NGO discovery tool.
 
 --
 Requirements
 
-- Ruby 1.9.1
-- Rails 2.3.8
+- Ruby 1.9.1 (we recommend RVM, from http://rvm.beginrescueend.com/)
+- Rails 2.3.8 (gem install -v=2.3.8 rails)
+- sqlite3-ruby (gem install sqlite3-ruby)
+

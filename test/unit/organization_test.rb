@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class OrganizationTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
 
   test "should not save Organization without name, city, country" do
     org = Organization.new
