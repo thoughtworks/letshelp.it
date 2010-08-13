@@ -40,7 +40,7 @@ public
   # GET /organizations/new.xml
   def new
     @organization = Organization.new
-    #@tags = Tag.all
+    @tag = Tag.new
 
     respond_to do |format|
       format.html # new.html.erb

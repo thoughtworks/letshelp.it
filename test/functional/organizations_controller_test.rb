@@ -45,4 +45,10 @@ class OrganizationsControllerTest < ActionController::TestCase
     put :create, :organization => {}
     assert_response :success 
   end
+
+  test "should be able to create a new tag on organization creation" do
+    get :new
+    assert assigns :tag
+  end
+
 end
