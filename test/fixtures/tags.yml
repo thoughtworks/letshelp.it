@@ -5,3 +5,9 @@ one:
 
 two:
   name: MyString
+  
+food:
+  name: Food
+
+money:
+  name: Money

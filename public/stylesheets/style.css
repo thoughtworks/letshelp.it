@@ -1,6 +1,9 @@
 body {
-	background: #8d8d8d;
+	background: #ffffff;
+	background-image:url('/images/bg.png');
+	background-repeat:repeat-x;
 	text-align: center;
+	font-family: 'Cantarell', arial, serif;
 }
 
 #container {
@@ -8,10 +11,6 @@ body {
 	margin: 0 auto;
 	text-align: left;
 	width: 960px;
-	<!--
-		border: 10px solid;
-		border-color: #5a6787;
-	-->
 }
 
 #header {
@@ -27,8 +26,12 @@ body {
 	margin: 10px;
 	padding: 0;
 	color: #ffffff;
-	font-size: 32px;
-	font-family: "Courier New";
+}
+
+#logo h1{
+    font-family: 'Reenie Beanie', arial, serif;
+    font-size: 60px;
+    letter-spacing:3px;
 }
 
 #registration {
@@ -38,12 +41,14 @@ body {
 #subheader {
 	padding: 10px;
 	background: #8d0000;
+	color: #ffffff;
 }
 
 #search_area {
 }
 
 #content {
+    background-image:url('/images/bg-content.png');
 }
 
 #organizations {
@@ -51,22 +56,23 @@ body {
 }
 
 #organizations div.organization {
-	border: 1px solid #000000;
+	border: 1px solid #8d0000;
 	margin: 10px;
 	padding: 10px;
 	width: 430px;
-	background: #5386bd;
+	background: #f4f1a6;
 	line-height: 5px;
-	color: #ffffff;
+	color: #8d0000;
 }
 
-a:link, a:visited {
+a {
 	color:#700B00;
+	text-decoration:none;
 	background-color:transparent
 }
 
-a:hover, a:active {
-	color:#FFcccc;
+a:hover {
+	color:#000000;
 	background-color:transparent
 }
 
@@ -80,5 +86,5 @@ a:hover, a:active {
 
 #footer {
 	height: 10px;
-	margin: 10px;
+    background: #f4f1a6;
 }
