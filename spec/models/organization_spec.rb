@@ -6,6 +6,8 @@ describe Organization do
   it { should validate_presence_of(:city) }
   it { should validate_presence_of(:responsible) }
   it { should validate_presence_of(:country) }
+  
+  it { should validate_uniqueness_of(:name) }
 
 end
 
