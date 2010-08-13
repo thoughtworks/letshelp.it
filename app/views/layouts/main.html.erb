@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Let's Help It!</title>
+  <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Cantarell:regular,italic,bold' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+
+  <%= stylesheet_link_tag 'scaffold' %>
+
+</head>
+<body>
+<p style="color: green"><%= flash[:notice] %></p>
+
+		<div id="container">
+			
+			<div id="header">
+				<div id="logo">
+					<h1>Let's Help It!</h1>
+				</div>
+				<div id="registration">
+					<!-- <%= link_to 'Cadastre sua ONG', new_organization_path %> -->
+					
+				</div>
+			</div>
+			
+			<div id="subheader">
+				<div id="search_area">
+					<form id="search_form" name="search_form" method="get" onsubmit="return verify_search()">
+						Qual a sua cidade?
+						<input id="search_query" type="text" />
+						<input id="search" type="submit" value="Let's Help It!" />
+					</form>
+				</div>
+			</div>
+			
+			<div id="content">
+			<%= yield %>
+				
+			</div>
+			
+			<div id="footer">
+			</div>
+
+		</div>
+
+</body>
+</html>
