@@ -7,5 +7,6 @@ group :test do
   gem 'rspec', :require => "spec"
   gem 'rspec-rails'
   gem 'shoulda'
+  gem 'test-unit', '1.2.3'
 end
 
