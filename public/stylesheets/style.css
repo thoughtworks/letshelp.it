@@ -14,7 +14,7 @@ body {
 }
 
 #header {
-	background: #000000;
+	background: #5f2815;
 	padding: 10px;
 	overflow: hidden;
 	margin: 0;
@@ -39,8 +39,8 @@ body {
 }
 
 #subheader {
-	padding: 10px;
-	background: #8d0000;
+	padding: 10px;/*f4f1a6*/
+	background: #34150a;/* 8d0000 */
 	color: #ffffff;
 }
 
@@ -86,5 +86,5 @@ a:hover {
 
 #footer {
 	height: 10px;
-    background: #f4f1a6;
+    background: #5f2815;
 }
