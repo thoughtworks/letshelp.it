@@ -47,9 +47,11 @@ class TagsController < ApplicationController
         flash[:notice] = 'Tag was successfully created.'
         format.html { redirect_to(@tag) }
         format.xml  { render :xml => @tag, :status => :created, :location => @tag }
+        format.js   { render :partial => 'tags/show_as_list_item' }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @tag.errors, :status => :unprocessable_entity }
+
       end
     end
   end

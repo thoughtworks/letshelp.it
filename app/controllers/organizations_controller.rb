@@ -51,7 +51,7 @@ public
   # GET /organizations/1/edit
   def edit
     #@organization = Organization.find(params[:id])
-    #@tags = Tag.all
+    @tag = Tag.new
   end
 
   # POST /organizations
@@ -66,6 +66,7 @@ public
         format.html { redirect_to(@organization) }
         format.xml  { render :xml => @organization, :status => :created, :location => @organization }
       else
+        @tag = Tag.new
         format.html { render :action => "new" }
         format.xml  { render :xml => @organization.errors, :status => :unprocessable_entity }
       end

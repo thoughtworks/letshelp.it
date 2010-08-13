@@ -14,7 +14,7 @@ class TagsControllerTest < ActionController::TestCase
 
   test "should create tag" do
     assert_difference('Tag.count') do
-      post :create, :tag => { }
+      post :create, :tag => { :name => "tag" }
     end
 
     assert_redirected_to tag_path(assigns(:tag))
@@ -31,7 +31,7 @@ class TagsControllerTest < ActionController::TestCase
   end
 
   test "should update tag" do
-    put :update, :id => tags(:one).to_param, :tag => { }
+    put :update, :id => tags(:one).to_param, :tag => { :name => "updated_name" }
     assert_redirected_to tag_path(assigns(:tag))
   end
 
@@ -42,4 +42,5 @@ class TagsControllerTest < ActionController::TestCase
 
     assert_redirected_to tags_path
   end
+
 end
