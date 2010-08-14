@@ -50,5 +50,13 @@ class OrganizationsControllerTest < ActionController::TestCase
     get :new
     assert assigns :tag
   end
+  
+  test "should reply the organizations related to a name in the search term" do
+    get :search, :id => 'Red Cross'
+    assert_response :success
+    assert assigns :organizations
+    assert_equal 1, assigns(:organizations).length
+    assert_equal organizations(:redcross), assigns(:organizations)[0]
+  end
 
 end
