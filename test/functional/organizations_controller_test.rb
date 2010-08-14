@@ -53,27 +53,28 @@ class OrganizationsControllerTest < ActionController::TestCase
   
   test "should reply the organizations related to a name in the search term" do
     get :search, :id => 'Red Cross'
-    assert_response :success
-    assert assigns :organizations
-    assert_equal 1, assigns(:organizations).length
-    assert_equal organizations(:redcross), assigns(:organizations)[0]
+    
+    assert_search_successful [organizations(:redcross)], assigns(:organizations)
   end
   
   test "should reply the organizations related to a city in the search term" do
     get :search, :id => 'tangamandapio'
-    assert_response :success
-    assert assigns :organizations
-    assert_equal 1, assigns(:organizations).length
-    assert_equal organizations(:wwf), assigns(:organizations)[0]
+    
+    assert_search_successful [organizations(:wwf)], assigns(:organizations)
   end
 
   test "should reply the organizations related to a tag name in the search term" do
     get :search, :id => 'food'
-    assert_response :success
-    assert assigns :organizations
-    org = assigns :organizations
-    assert_equal 1, assigns(:organizations).length
-    assert_equal organizations(:redcross), assigns(:organizations)[0]
-  end  
+    
+    assert_search_successful [organizations(:redcross), organizations(:wwf)], assigns(:organizations)
+  end
+  
+  private
+  
+  def assert_search_successful(expected_results, received_results, message='')
+    assert_response :success, message
+    assert received_results, message
+    assert_equal expected_results, received_results, message
+  end
 
 end

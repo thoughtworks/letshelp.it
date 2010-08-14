@@ -6,9 +6,9 @@ redcross_money:
   organization_id: 1
   tag_id: 4
   
-wwf_money:
+wwf_food:
   organization_id: 2
-  tag_id: 4
+  tag_id: 3
   
 wwf_cloth:
   organization_id: 2
