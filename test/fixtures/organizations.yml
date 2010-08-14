@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 redcross:
+  id: 1
   name: Red Cross
   responsible: John Armless
   phone: 555555
@@ -9,10 +10,10 @@ redcross:
   address: 123 road st
   city: Springfield
   country: USA
-  tags: (:food, :money)
   needs: Lots of rice
 
 wwf:
+  id: 2
   name: WWF Brasil
   responsible: Godines Rodriguez
   phone: 2345678
@@ -21,5 +22,4 @@ wwf:
   address: Rua das Palmeiras
   city: Tangamandapio
   country: Brazil
-  tags: (:money)
   needs: money
