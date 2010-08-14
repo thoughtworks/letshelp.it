@@ -11,3 +11,6 @@ food:
 
 money:
   name: Money
+
+cloth:
+  name: Cloth
