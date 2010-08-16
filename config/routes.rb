@@ -48,6 +48,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :organizations#, :collection => { :search => :get }
   map.resources :tags
 
+  map.resources :organizations, :path_prefix => '/:locale'
+
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
   
