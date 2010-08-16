@@ -52,19 +52,19 @@ class OrganizationsControllerTest < ActionController::TestCase
   end
   
   test "should reply the organizations related to a name in the search term" do
-    get :search, :id => 'Red Cross'
+    get :search, :q => 'Red Cross'
     
     assert_search_successful [organizations(:redcross)], assigns(:organizations)
   end
   
   test "should reply the organizations related to a city in the search term" do
-    get :search, :id => 'tangamandapio'
+    get :search, :q => 'tangamandapio'
     
     assert_search_successful [organizations(:wwf)], assigns(:organizations)
   end
 
   test "should reply the organizations related to a tag name in the search term" do
-    get :search, :id => 'food'
+    get :search, :q => 'food'
     
     assert_search_successful [organizations(:wwf), organizations(:redcross)], assigns(:organizations)
   end
