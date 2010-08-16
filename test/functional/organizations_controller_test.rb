@@ -74,7 +74,10 @@ class OrganizationsControllerTest < ActionController::TestCase
   def assert_search_successful(expected_results, received_results, message='')
     assert_response :success, message
     assert received_results, message
-    assert_equal expected_results, received_results, message
+    assert_equal expected_results.size, received_results.size
+    expected_results.each do |r|
+      assert received_results.include?(r), message
+    end
   end
 
 end
