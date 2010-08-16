@@ -43,10 +43,11 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   
   
-  map.connect '/tags/ajax_tag/create', :controller => 'tags', :action => 'ajax_tag'
   map.connect '/organizations/search', :controller => 'organizations', :action => 'search', :conditions => { :method => :get }
-  map.resources :organizations#, :collection => { :search => :get }
+  map.resources :organizations
   map.resources :tags
+
+  map.resources :organizations, :path_prefix => '/:locale'
 
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'

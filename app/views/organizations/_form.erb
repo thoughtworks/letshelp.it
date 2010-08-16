@@ -1,6 +1,4 @@
 
-<%= javascript_include_tag 'jquery' %>
-
 <% form_for(@organization) do |f| %>
   <%= f.error_messages %>
 
@@ -8,25 +6,10 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
+  
   <p>
-    <%= f.label :responsible %><br />
-    <%= f.text_field :responsible %>
-  </p>
-  <p>
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :website %><br />
-    <%= f.text_field :website %>
-  </p>
-  <p>
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
   </p>
   <p>
     <%= f.label :city %><br />
@@ -46,29 +29,13 @@
       <% end -%>
     </ul>
   </p>
+
   <p>
-    <input type="text" id="tag_field" />
-    <input type="button" value="add_tag" id="add_tag"/>
-    <script>
+    <%= f.label :needs %><br />
+    <%= f.text_area :needs %>
+  </p>
+  <p>
+    <%= f.submit action %>
+  </p>
 
-      $('#add_tag').unbind().click(function(){
-        $.ajax({ url : "/tags/ajax_tag/create", 
-          data : { name : $('#tag_field').val() }, 
-          success: function(data) {
-            $('#list_tags').append(data)
-          },
-          fail : {}
-        });
-      });
-    </script>
-   </p>
-
-   <p>
-     <%= f.label :needs %><br />
-     <%= f.text_area :needs %>
-   </p>
-   <p>
-     <%= f.submit action %>
-
-   </p>
- <% end %>
+<% end %>

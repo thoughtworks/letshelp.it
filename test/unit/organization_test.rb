@@ -3,8 +3,7 @@ require 'test_helper'
 class OrganizationTest < ActiveSupport::TestCase
   
   should validate_presence_of :name  
-  should validate_presence_of :city
-  should validate_presence_of :responsible
+  should validate_presence_of :contact
   should validate_presence_of :country
 
   should validate_uniqueness_of :name

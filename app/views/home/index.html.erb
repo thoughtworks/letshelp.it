@@ -1,11 +1,1 @@
-<div id="organizations">
-  <% @organizations.each_with_index do |organization, i| %>
-    <% link_to organization do %>
-      <div class="organization <%= i.even? ? 'left' : 'right'%>">
-        <h2><%=h organization.name %></h2>
-        <h3><%=h organization.city %></h3>
-        <p><%=h organization.needs %></p>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+<%= render :partial => 'layouts/organization_grid' %>
