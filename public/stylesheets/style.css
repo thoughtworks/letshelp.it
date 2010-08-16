@@ -1,7 +1,6 @@
+
 body {
-	background: #ffffff;
-	background-image:url('/images/bg.png');
-	background-repeat:repeat-x;
+	background: #eeede2;
 	text-align: center;
 	font-family: 'Cantarell', arial, serif;
 	margin: 0;
@@ -9,14 +8,13 @@ body {
 }
 
 #container {
-	background: #d2d2d2;
+	background: #f7f6f6;
 	margin:0 auto;
 	text-align: left;
 	width: 960px;
 }
 
 #header {
-	background: #5f2815;
 	padding: 10px;
 	overflow: hidden;
 	margin: 0;
@@ -30,7 +28,7 @@ body {
 
 #logo h1 a{
   	margin: 30px;
-    color:#ffffff;
+    color:#000000;
     font-family: 'Reenie Beanie', arial, serif;
     font-size: 60px;
     letter-spacing:3px;
@@ -41,16 +39,16 @@ body {
 }
 
 #subheader {
-	padding: 10px;/*f4f1a6*/
-	background: #34150a;/* 8d0000 */
+	padding: 10px;
+	background: #34150a;
 	color: #ffffff;
 }
 
 #search_area {
+  text-align: center;
 }
 
 #content {
-    background-image:url('/images/bg-content.png');
     padding: 15px;
 }
 
@@ -63,10 +61,15 @@ body {
 	margin: 10px;
 	padding: 10px;
 	width: 400px;
-	background: #f4f1a6;
+	background: #e7dda9;
 	line-height: 5px;
 	color: #8d0000;
 }
+
+#organizations div.organization h2 {
+	margin: 5px;
+}
+
 
 #organizations div.left {
 	float: left;
@@ -83,22 +86,31 @@ a {
 }
 
 a:hover {
-	color:#000000;
+	color:#333333;
 	background-color:transparent
 }
 
 input {
-  height:20px;
-  margin:0px;
   border-style: none;
-
+  height: 30px;
+  -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	font-family: 'Cantarell', arial, serif;
+	font-size: 16px;
 }
 
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-  background: #5f2815;
-  color: #f4f1a6;
+  background: #C00000;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+input[type="submit"]
+{
+  cursor: pointer;
 }
 
 p {
@@ -106,7 +118,11 @@ p {
   padding: 5px;
 }
 
+#search_query {
+  width: 600px;
+}
+
 #footer {
 	height: 10px;
-  background: #5f2815;
+  background: #34150a;
 }
