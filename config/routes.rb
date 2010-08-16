@@ -43,14 +43,12 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   
   
-  
-  
-  #map.connect ':controller/search/:search_query', :controller => 'organizations', :action => 'search'
-  map.resources :organizations, :collection => { :search => :get }
+  map.connect '/organizations/search', :controller => 'organizations', :action => 'search'
+  map.resources :organizations#, :collection => { :search => :get }
   map.resources :tags
 
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  #map.connect ':controller/:action/:id'
+  #map.connect ':controller/:action/:id.:format'
   
 
 end

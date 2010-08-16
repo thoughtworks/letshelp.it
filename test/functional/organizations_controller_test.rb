@@ -50,5 +50,34 @@ class OrganizationsControllerTest < ActionController::TestCase
     get :new
     assert assigns :tag
   end
+  
+  test "should reply the organizations related to a name in the search term" do
+    get :search, :q => 'Red Cross'
+    
+    assert_search_successful [organizations(:redcross)], assigns(:organizations)
+  end
+  
+  test "should reply the organizations related to a city in the search term" do
+    get :search, :q => 'tangamandapio'
+    
+    assert_search_successful [organizations(:wwf)], assigns(:organizations)
+  end
+
+  test "should reply the organizations related to a tag name in the search term" do
+    get :search, :q => 'food'
+    
+    assert_search_successful [organizations(:wwf), organizations(:redcross)], assigns(:organizations)
+  end
+  
+  private
+  
+  def assert_search_successful(expected_results, received_results, message='')
+    assert_response :success, message
+    assert received_results, message
+    assert_equal expected_results.size, received_results.size
+    expected_results.each do |r|
+      assert received_results.include?(r), message
+    end
+  end
 
 end
