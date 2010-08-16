@@ -66,7 +66,7 @@ class OrganizationsControllerTest < ActionController::TestCase
   test "should reply the organizations related to a tag name in the search term" do
     get :search, :id => 'food'
     
-    assert_search_successful [organizations(:redcross), organizations(:wwf)], assigns(:organizations)
+    assert_search_successful [organizations(:wwf), organizations(:redcross)], assigns(:organizations)
   end
   
   private
