@@ -43,7 +43,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   
   
-  map.connect '/tags/ajax_tag/create', :controller => 'tags', :action => 'ajax_tag'
+  map.connect '/tags/ajax_tag/register', :controller => 'tags', :action => 'ajax_tag'
   map.connect '/organizations/search', :controller => 'organizations', :action => 'search'
   map.resources :organizations#, :collection => { :search => :get }
   map.resources :tags

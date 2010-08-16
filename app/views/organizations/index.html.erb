@@ -1,33 +1,9 @@
-<h1>Listing organizations</h1>
+<% if @organizations.empty? %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Contact</th>
-    <th>City</th>
-    <th>Country</th>
-    <th>Tags</th>
-    <th>Needs</th>
-  </tr>
+	<h1>Hmm sorry, no organization was found...</h1>
 
-<% @organizations.each do |organization| %>
-  <tr>
-    <td><%=h organization.name %></td>
-    <td><%=h organization.contact %></td>
-    <td><%=h organization.city %></td>
-    <td><%=h organization.country %></td>
-    <td><% organization.tags.each do |t| %>
-    <%=h t.name  %>
-    <% end %>
-    </td>
-    <td><%=h organization.needs %></td>
-    <td><%= link_to 'Show', organization %></td>
-    <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
-    <td><%= link_to 'Destroy', organization, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% else %>
+
+	<%= render :partial => 'layouts/organization_grid' %>
+
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New organization', new_organization_path %>

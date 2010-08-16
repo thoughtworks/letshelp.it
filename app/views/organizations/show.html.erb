@@ -18,14 +18,17 @@
   <%=h @organization.country %>
 </p>
 
-  <p>
-    <b>Tags:</b>
-	<%= @organization.tags.inject([]){|a,t| a<<t.name}.join(', ')  %>
-  </p>
+<p>
+  <b>Tags:</b>
+  <%= @organization.tags.inject([]){|a,t| a<<t.name}.join(', ')  %>
+</p>
 
 <p>
   <b>Needs:</b>
   <%=h @organization.needs %>
 </p>
 
-
+<!--
+<%= link_to 'Edit', edit_organization_path(organization) %>
+<%= link_to 'Destroy', organization, :confirm => 'Are you sure?', :method => :delete %>
+-->
