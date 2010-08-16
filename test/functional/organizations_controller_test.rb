@@ -17,18 +17,18 @@ class OrganizationsControllerTest < ActionController::TestCase
 
   test "should create organization" do
     assert_difference('Organization.count') do
-      post :create, :organization => { :name => "title", :responsible => "responsible", :city => "city", :country => "country"}
+      post :create, :organization => { :name => "title", :contact => "contact", :city => "city", :country => "country"}
     end
     assert_redirected_to organization_path(assigns(:organization))
   end
 
   test "should show organization" do
-    get :show, :id => organizations(:wwf).to_param
+    get :show, :id => organizations(:redcross).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => organizations(:redcross).to_param
+    get :edit, :id => organizations(:wwf).to_param
     assert_response :success
   end
 
@@ -49,11 +49,6 @@ class OrganizationsControllerTest < ActionController::TestCase
     assert_response :success 
   end
 
-  test "should be able to create a new tag on organization creation" do
-    get :new
-    assert assigns :tag
-  end
-  
   test "should reply the organizations related to a name in the search term" do
     get :search, :q => 'Red Cross'
     

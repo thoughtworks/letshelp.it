@@ -13,14 +13,13 @@ ActiveRecord::Schema.define(:version => 20100811100000) do
 
   create_table "organizations", :force => true do |t|
     t.string   "name"
-    t.string   "responsible"
-    t.string   "phone"
-    t.string   "email"
-    t.string   "website"
-    t.string   "address"
+    t.string   "_name"
+    t.string   "contact"
     t.string   "city"
+    t.string   "_city"
     t.string   "country"
     t.text     "needs"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

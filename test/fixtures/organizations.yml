@@ -3,11 +3,7 @@
 redcross:
   id: 1
   name: Red Cross
-  responsible: John Armless
-  phone: 555555
-  email: john@redcross_armless.com
-  website: http://armless_redcross.com
-  address: 123 road st
+  contact: lalala
   city: Springfield
   country: USA
   needs: Lots of rice
@@ -15,11 +11,7 @@ redcross:
 wwf:
   id: 2
   name: WWF Brasil
-  responsible: Godines Rodriguez
-  phone: 2345678
-  email: godines@chavolino_wwf.com
-  website: http://godines_brasil.com.br
-  address: Rua das Palmeiras
+  contact: lululu
   city: Tangamandapio
   country: Brazil
   needs: money

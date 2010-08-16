@@ -3,11 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Responsible</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Website</th>
-    <th>Address</th>
+    <th>Contact</th>
     <th>City</th>
     <th>Country</th>
     <th>Tags</th>
@@ -17,11 +13,7 @@
 <% @organizations.each do |organization| %>
   <tr>
     <td><%=h organization.name %></td>
-    <td><%=h organization.responsible %></td>
-    <td><%=h organization.phone %></td>
-    <td><%=h organization.email %></td>
-    <td><%=h organization.website %></td>
-    <td><%=h organization.address %></td>
+    <td><%=h organization.contact %></td>
     <td><%=h organization.city %></td>
     <td><%=h organization.country %></td>
     <td><% organization.tags.each do |t| %>
