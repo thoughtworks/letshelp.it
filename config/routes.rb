@@ -44,7 +44,7 @@ ActionController::Routing::Routes.draw do |map|
   
   
   map.connect '/tags/ajax_tag/create', :controller => 'tags', :action => 'ajax_tag'
-  map.connect '/organizations/search', :controller => 'organizations', :action => 'search'
+  map.connect '/organizations/search', :controller => 'organizations', :action => 'search', :conditions => { :method => :get }
   map.resources :organizations#, :collection => { :search => :get }
   map.resources :tags
 
