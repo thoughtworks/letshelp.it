@@ -4,11 +4,13 @@ body {
 	background-repeat:repeat-x;
 	text-align: center;
 	font-family: 'Cantarell', arial, serif;
+	margin: 0;
+	padding: 0;
 }
 
 #container {
 	background: #d2d2d2;
-	margin: 0 auto;
+	margin:0 auto;
 	text-align: left;
 	width: 960px;
 }
@@ -23,12 +25,12 @@ body {
 
 #logo {
 	float: left;
-	margin: 10px;
 	padding: 0;
-	color: #ffffff;
 }
 
-#logo h1{
+#logo h1 a{
+  	margin: 30px;
+    color:#ffffff;
     font-family: 'Reenie Beanie', arial, serif;
     font-size: 60px;
     letter-spacing:3px;
@@ -49,6 +51,7 @@ body {
 
 #content {
     background-image:url('/images/bg-content.png');
+    padding: 15px;
 }
 
 #organizations {
@@ -59,10 +62,18 @@ body {
 	border: 1px solid #8d0000;
 	margin: 10px;
 	padding: 10px;
-	width: 430px;
+	width: 400px;
 	background: #f4f1a6;
 	line-height: 5px;
 	color: #8d0000;
+}
+
+#organizations div.left {
+	float: left;
+}
+
+#organizations div.right {
+	float: right;
 }
 
 a {
@@ -76,15 +87,26 @@ a:hover {
 	background-color:transparent
 }
 
-#organizations div.left {
-	float: left;
+input {
+  height:20px;
+  margin:0px;
+  border-style: none;
+
 }
 
-#organizations div.right {
-	float: right;
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  background: #5f2815;
+  color: #f4f1a6;
+}
+
+p {
+  margin: 0;
+  padding: 5px;
 }
 
 #footer {
 	height: 10px;
-    background: #5f2815;
+  background: #5f2815;
 }

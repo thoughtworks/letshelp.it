@@ -1,15 +1,11 @@
-   
-<meta name="author" content="ThoughtWorks" />
-
 <div id="organizations">
-	<% @organizations.each_with_index do |organization, i| %>
-		<div class="organization <%= i.even? ? 'left' : 'right'%>">
-			<h2><%= link_to organization.name, organization %></h2>
-			<h2><%=h organization.city %></h2>
-			<p><%=h organization.needs %></p>
-		</div>
-	<% end %>
-	<!--<%= link_to "LetsHelpIt", organizations_path %>-->
-</div>		
-		<script type="text/javascript" src="/javascripts/search.js"></script>
-
+  <% @organizations.each_with_index do |organization, i| %>
+    <% link_to organization do %>
+      <div class="organization <%= i.even? ? 'left' : 'right'%>">
+        <h2><%=h organization.name %></h2>
+        <h3><%=h organization.city %></h3>
+        <p><%=h organization.needs %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

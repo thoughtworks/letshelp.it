@@ -40,9 +40,7 @@
 
   <p>
     <b>Tags:</b>
-	<% @tags.each do |tag| -%>
-<li><%= check_box_tag "organization[tag_ids][]", tag.id, has_tag?(tag) -%> <%= tag.name -%></li>
-  <% end -%>
+	<%= @organization.tags.inject([]){|a,t| a<<t.name}.join(', ')  %>
   </p>
 
 <p>
@@ -51,5 +49,3 @@
 </p>
 
 
-<%= link_to 'Edit', edit_organization_path(@organization) %> |
-<%= link_to 'Back', organizations_path %>
