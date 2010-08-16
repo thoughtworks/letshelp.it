@@ -1,10 +1,11 @@
 require 'test_helper'
 
 class OrganizationsControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:organizations)
+
+  context 'index page' do
+    setup { get :index }
+    should respond_with :success
+    should assign_to :organizations
   end
 
   test "should get new" do
