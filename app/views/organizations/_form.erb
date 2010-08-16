@@ -1,61 +1,74 @@
+
+<%= javascript_include_tag 'jquery' %>
+
 <% form_for(@organization) do |f| %>
   <%= f.error_messages %>
 
   <p>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </p>
   <p>
-  <%= f.label :responsible %><br />
-  <%= f.text_field :responsible %>
+    <%= f.label :responsible %><br />
+    <%= f.text_field :responsible %>
   </p>
   <p>
-  <%= f.label :phone %><br />
-  <%= f.text_field :phone %>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
   </p>
   <p>
-  <%= f.label :email %><br />
-  <%= f.text_field :email %>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
   </p>
   <p>
-  <%= f.label :website %><br />
-  <%= f.text_field :website %>
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
   </p>
   <p>
-  <%= f.label :address %><br />
-  <%= f.text_field :address %>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
   </p>
   <p>
-  <%= f.label :city %><br />
-  <%= f.text_field :city %>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
   </p>
   <p>
-  <%= f.label :country %><br />
-  <%= f.text_field :country %>
-  </p>
- 
-  <p>
-  <%= f.label :tags %><br />
-  <ul id="list_tags"> 
-  <% @tags.each do |tag| -%>
-    <li><%= check_box_tag "organization[tag_ids][]", tag.id, false -%> <%= tag.name -%></li>
-  <% end -%>
-  </ul>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
   </p>
 
 
   <p>
-  <%= f.label :needs %><br />
-  <%= f.text_area :needs %>
+    <%= f.label :tags %><br />
+    <ul id="list_tags"> 
+      <% @tags.each do |tag| -%>
+        <li><input type="checkbox" value="<%=tag.id%>" name="organization[tag_ids][]" <%= @organization.tags.include?(tag) ? "checked=\"checked\"" : "" %>/><span><%= tag.name %></span></li>
+      <% end -%>
+    </ul>
   </p>
   <p>
-  <%= f.submit action %>
+    <input type="text" id="tag_field" />
+    <input type="button" value="add_tag" id="add_tag"/>
+    <script>
 
+      $('#add_tag').unbind().click(function(){
+        $.ajax({ url : "/tags/ajax_tag/create", 
+          data : { name : $('#tag_field').val() }, 
+          success: function(data) {
+            $('#list_tags').append(data)
+          },
+          fail : {}
+        });
+      });
+    </script>
+   </p>
 
- </p>
-<% end %>
-<div>
+   <p>
+     <%= f.label :needs %><br />
+     <%= f.text_area :needs %>
+   </p>
+   <p>
+     <%= f.submit action %>
 
-  <%= render :partial => "tags/new" %>
-</div>
-
+   </p>
+ <% end %>

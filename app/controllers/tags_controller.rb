@@ -84,4 +84,16 @@ class TagsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def ajax_tag
+    @tag = Tag.new(:name => params[:name])
+    respond_to do |format|
+      if @tag.save then
+        format.js
+      else
+        format.js { render :status => :unprocessable_entity }
+      end
+    end
+  end
+
 end

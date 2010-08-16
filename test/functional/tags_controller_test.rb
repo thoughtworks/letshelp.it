@@ -43,4 +43,15 @@ class TagsControllerTest < ActionController::TestCase
     assert_redirected_to tags_path
   end
 
+  test "should create a tag with ajax request" do
+    assert_difference('Tag.count', 1) do
+      get :ajax_tag, :name => 'new tag'
+    end
+  end
+
+  test "should not create a invalid tag with ajax request" do
+    get :ajax_tag, :name => ""
+    assert_response :unprocessable_entity
+  end 
+
 end
