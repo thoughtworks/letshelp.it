@@ -15,10 +15,12 @@ body {
 }
 
 #header {
+  background-image: url('/images/logo_sepia.jpg'); /*got from http://www.flickr.com/photos/zoriah/3487507132/sizes/o/ */
 	padding: 10px;
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
+	height: 212px;
 }
 
 #logo {
@@ -28,7 +30,7 @@ body {
 
 #logo h1 a{
   	margin: 30px;
-    color:#000000;
+    color:#ffffff;
     font-family: 'Reenie Beanie', arial, serif;
     font-size: 60px;
     letter-spacing:3px;
@@ -90,12 +92,23 @@ a:hover {
 	background-color:transparent
 }
 
+a.link {
+  background-color:#ffffff;
+  -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+}
+
 input {
+  margin: 0;
+  padding: 3px;
   border-style: none;
   height: 30px;
-  -webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+  -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 	font-family: 'Cantarell', arial, serif;
 	font-size: 16px;
 }
@@ -108,9 +121,11 @@ input[type="reset"] {
   font-weight: bold;
 }
 
+
 input[type="submit"]
 {
   cursor: pointer;
+   height: 35px;
 }
 
 p {
@@ -120,6 +135,21 @@ p {
 
 #search_query {
   width: 600px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#search {
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 #footer {

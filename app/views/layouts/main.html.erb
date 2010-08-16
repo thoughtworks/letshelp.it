@@ -19,23 +19,20 @@
 					<h1><%= link_to "Let's Help It!", :root %></h1>
 				</div>
 				<div id="registration">
-					<!-- <%= link_to 'Cadastre sua ONG', new_organization_path %> -->
-					
+					<%= link_to 'Add your organization', new_organization_path, :class => "link" %>
 				</div>
 			</div>
 			
 			<div id="subheader">
 				<div id="search_area">
 					<form id="search_form" name="search_form" method="get" action="/organizations/search">
-						
-						<input id="search_query" name="q" type="text" />
-						<input id="search" type="submit" value="Let's Help It!" />
+						<input id="search_query" name="q" type="text" /><input id="search" type="submit" value="Find someone to help!" />
 					</form>
 				</div>
 			</div>
 			
 			<div id="content">
-					<div style="color: green" align="center"><%= flash[:notice] %></div>
+				<div style="color: green" align="center"><%= flash[:notice] %></div>
   			<%= yield %>
 			</div>
 			
