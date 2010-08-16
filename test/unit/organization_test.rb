@@ -2,17 +2,13 @@ require 'test_helper'
 
 class OrganizationTest < ActiveSupport::TestCase
   
-  test "should not include two Organization with the same name" do
-    rc = Organization.new do |o|
-      o.name = 'Red Cross'
-      o.responsible = 'Linda Taylor'
-      o.city = 'London'
-      o.country = 'UK'
-    end
-    
-    assert !rc.save, 'should not save duplicated red cross'
-  end
-  
+  should validate_presence_of :name  
+  should validate_presence_of :city
+  should validate_presence_of :responsible
+  should validate_presence_of :country
+
+  should validate_uniqueness_of :name
+ 
   test "should return if the given tag is associated to the organization" do
     
     org = organizations(:wwf)
