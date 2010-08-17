@@ -27,8 +27,8 @@ public
   # GET /organizations/1
   # GET /organizations/1.xml
   def show
-    #@organization = Organization.find(params[:id])
-    #@tags = Tag.all
+    @organization = Organization.find(params[:id])
+    @tags = Tag.all
 
     respond_to do |format|
       format.html # show.html.erb
