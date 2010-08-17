@@ -23,11 +23,11 @@
 
   <p>
     <%= f.label :tags %><br />
-    <ul id="list_tags"> 
+    <blockquote id="list_tags"> 
       <% @tags.each do |tag| -%>
-        <li><input type="checkbox" value="<%=tag.id%>" name="organization[tag_ids][]" <%= @organization.tags.include?(tag) ? "checked=\"checked\"" : "" %>/><span><%= t("tag.#{tag.name}") %></span></li>
+        <label><input type="checkbox" value="<%=tag.id%>" name="organization[tag_ids][]" <%= @organization.tags.include?(tag) ? "checked=\"checked\"" : "" %>/> <%= t("tag.#{tag.name}") %></label><br />
       <% end -%>
-    </ul>
+    </blockquote>
   </p>
 
   <p>
