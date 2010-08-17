@@ -56,8 +56,4 @@ class TagsControllerTest < ActionController::TestCase
   end 
 =end
 
-  test "should fail" do
-    assert false
-  end
-
 end
