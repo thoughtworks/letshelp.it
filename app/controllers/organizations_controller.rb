@@ -106,7 +106,7 @@ public
   def search
      @organizations = Organization.find(:all, :conditions => "name like '%#{params[:q]}%' OR city like '%#{params[:q]}%'")
      tag = Tag.find(:all, :conditions => "name like '%#{params[:q]}%'")[0]
-     @organizations = (@organizations + tag.organizations).uniq if not tag.nil?   
+     @organizations = (@organizations | tag.organizations) if not tag.nil?   
     
     respond_to do |format|
       format.html { render :action => :index }
