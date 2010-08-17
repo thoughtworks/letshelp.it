@@ -17,11 +17,6 @@ public
   # GET /organizations.xml
   def index
     @organizations = Organization.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @organizations }
-    end
   end
 
   # GET /organizations/1
@@ -29,11 +24,6 @@ public
   def show
     @organization = Organization.find(params[:id])
     @tags = Tag.all
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @organization }
-    end
   end
 
   # GET /organizations/new
@@ -41,11 +31,6 @@ public
   def new
     @organization = Organization.new
     @tag = Tag.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @organization }
-    end
   end
 
   # GET /organizations/1/edit
@@ -57,7 +42,6 @@ public
     respond_to do |format|
       if(@organization.password == params[:password]) then
         format.js { render :partial => "organizations/form" , :locals => { :action => "Update" } }
-        format.html
       else
         format.js { render :text => "wrong_password", :status => :failure }
       end
@@ -74,11 +58,9 @@ public
       if @organization.save
         flash[:notice] = 'Organization was successfully created.'
         format.html { redirect_to(@organization) }
-        format.xml  { render :xml => @organization, :status => :created, :location => @organization }
       else
         @tag = Tag.new
         format.html { render :action => "new" }
-        format.xml  { render :xml => @organization.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -93,10 +75,8 @@ public
       if @organization.update_attributes(params[:organization])
         flash[:notice] = 'Organization was successfully updated.'
         format.html { redirect_to(@organization) }
-        format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @organization.errors, :status => :unprocessable_entity }
+        format.html { render :layout => "main", :partial => "form", :locals => { :action => "Update" } } 
       end
     end
   end
@@ -109,7 +89,6 @@ public
 
     respond_to do |format|
       format.html { redirect_to(organizations_url) }
-      format.xml  { head :ok }
     end
   end
   
@@ -120,7 +99,6 @@ public
     
     respond_to do |format|
       format.html { render :action => :index }
-      format.xml  { render :xml => @organizations }
     end
   end
 

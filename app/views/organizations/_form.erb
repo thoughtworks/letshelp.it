@@ -7,7 +7,7 @@
   </p>
   
   <p>
-    <%= f.label :contact %><br />
+    <%= f.label :contact %> <span class="smooth_text">contact_info</span> <br />
     <%= f.text_field :contact %>
   </p>
   <p>
@@ -36,6 +36,10 @@
   
   <div id="announcer_infos">
   	<p>announcer_info</p>
+		<p>
+		  <%= f.label :announcer %><br />
+		  <%= f.text_field :announcer %>
+		</p>
 	  <p>
 		  <%= f.label :password %><br />
 		  <%= f.password_field :password %>
@@ -43,10 +47,6 @@
 		<p>
 		  <%= f.label :email %><br />
 		  <%= f.text_field :email %>
-		</p>
-		<p>
-		  <%= f.label :announcer %><br />
-		  <%= f.text_field :announcer %>
 		</p>
   </div>
   
