@@ -45,7 +45,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.connect '/organizations/search', :controller => 'organizations', :action => 'search', :conditions => { :method => :get }
   map.resources :organizations
-  map.resources :tags
+#  map.resources :tags
 
   map.resources :organizations, :path_prefix => '/:locale'
 
