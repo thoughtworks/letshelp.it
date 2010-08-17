@@ -20,7 +20,7 @@
 
 	<p>
 		<b>Tags:</b>
-		<%= @organization.tags.inject([]){|a,t| a<<t.name}.join(', ')  %>
+    <%= @organization.tags.inject([]){|a,tag| a<<t("tag.#{tag.name}")}.join(', ')  %>
 	</p>
 
 	<p>
@@ -30,4 +30,3 @@
 
 
 	<%= link_to 'edit', edit_organization_path(@organization), :class => 'link'  %>
-
