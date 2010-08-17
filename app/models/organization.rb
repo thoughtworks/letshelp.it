@@ -1,7 +1,7 @@
 class Organization < ActiveRecord::Base
 
-	validates_presence_of :name, :contact, :city, :country
-
+	validates_presence_of :name, :contact, :city, :country, :password,  :announcer, :email
+	validates_format_of :email, :with  => /[\w+-][\w.+-]*@\w+\.\w+/, :message => "wrong_mail_address"
 	validates_uniqueness_of :name
 
 	has_and_belongs_to_many :tags

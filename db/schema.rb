@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20100811100000) do
     t.string   "country"
     t.text     "needs"
     t.string   "password"
+    t.string   "email"
+    t.string   "announcer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

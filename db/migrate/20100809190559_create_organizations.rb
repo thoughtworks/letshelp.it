@@ -10,8 +10,8 @@ class CreateOrganizations < ActiveRecord::Migration
       t.text :needs
 		
 			t.string :password
-			t.email :email
-			t.announcer :announcer
+			t.string :email
+			t.string :announcer
 						
       t.timestamps
     end
