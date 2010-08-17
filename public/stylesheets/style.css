@@ -58,11 +58,6 @@
 	color: #331200;
 }
 
-#content input[type="text"],
-#content textarea {
-	border: 1px solid #331200;
-}
-
 #organizations {
 	overflow: hidden;
 }
@@ -172,12 +167,17 @@ a.link {
 	-moz-border-radius: 5px;
 }
 
-input {
-	height: 30px;
-}
-
 textarea {
 	height: 150px;
+}
+
+#content input,
+#content textarea {
+	border: 1px solid #331200;
+}
+
+input {
+	height: 30px;
 }
 
 input,
@@ -192,7 +192,9 @@ textarea {
 }
 
 input[type="text"],
-textarea {
+input[type="password"],
+textarea 
+	{
 	color: #331200;
 	padding: 0 5px;
 	width: 250px;
@@ -200,7 +202,8 @@ textarea {
 
 input[type="submit"],
 input[type="button"],
-input[type="reset"] {
+input[type="reset"]
+ {
 	background: #e4d5b7;
 	color: #331200;
 	font-weight: bold;

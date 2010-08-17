@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
 
   before_filter :find_organization, :only => [:show, :edit, :update, :destroy]
-  before_filter :find_all_tags, :only => [:new, :show, :create, :edit, :update]
+  before_filter :find_all_tags, :only => [:new, :show, :create, :ajax_edit, :update]
   
 private
   def find_organization
@@ -50,8 +50,18 @@ public
 
   # GET /organizations/1/edit
   def edit
-    #@organization = Organization.find(params[:id])
-    @tag = Tag.new
+  end
+
+  def ajax_edit
+    @organization = Organization.find(params[:id])
+    respond_to do |format|
+      if(@organization.password == params[:password]) then
+        format.js { render :partial => "organizations/form" , :locals => { :action => "Update" } }
+        format.html
+      else
+        format.js { render :text => "wrong_password", :status => :failure }
+      end
+    end
   end
 
   # POST /organizations
