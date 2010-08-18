@@ -6,9 +6,5 @@ class TagTest < ActiveSupport::TestCase
 
   should validate_uniqueness_of :name
 
-  test "should break" do
-    assert false
-  end
-
 end
 
