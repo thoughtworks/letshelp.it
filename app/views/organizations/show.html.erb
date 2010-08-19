@@ -1,39 +1,32 @@
-<p>
-  <b>Name:</b>
-  <%=h @organization.name %>
-</p>
+	<p>
+		<b>Name:</b>
+		<%=h @organization.name %>
+	</p>
 
-<p>
-  <b>Contact:</b>
-  <%=h @organization.contact %>
-</p>
+	<p>
+		<b>Contact:</b>
+		<%=h @organization.contact %>
+	</p>
 
-<p>
-  <b>City:</b>
-  <%=h @organization.city %>
-</p>
+	<p>
+		<b>City:</b>
+		<%=h @organization.city %>
+	</p>
 
-<p>
-  <b>Country:</b>
-  <%=h @organization.country %>
-</p>
+	<p>
+		<b>Country:</b>
+		<%=h @organization.country %>
+	</p>
 
-<p>
-  <b>Tags:</b>
-  <%= @organization.tags.inject([]){|a,t| a<<t.name}.join(', ')  %>
-</p>
+	<p>
+		<b>Tags:</b>
+    <%= @organization.tags.inject([]){|a,tag| a<<t("tag.#{tag.name}")}.join(', ')  %>
+	</p>
 
-<p>
-  <b>Needs:</b>
-  <%=h @organization.needs %>
-</p>
+	<p>
+		<b>Needs:</b>
+		<%=h @organization.needs %>
+	</p>
 
-<p>
-  <b>Announcer:</b>
-  <%=h @organization.announcer %>,
-</p>
 
-<!--
-<%= link_to 'Edit', edit_organization_path(@organization) %>
-<%= link_to 'Destroy', @organization, :confirm => 'Are you sure?', :method => :delete %>
--->
+	<%= link_to 'edit', edit_organization_path(@organization), :class => 'link'  %>

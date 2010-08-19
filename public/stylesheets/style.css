@@ -54,13 +54,14 @@
 	padding: 15px;
 }
 
-#content * {
-	color: #331200;
+.smooth_text {
+  color : gray;
+  font-style : italic;
+  font-size : small;
 }
 
-#content input[type="text"],
-#content textarea {
-	border: 1px solid #331200;
+#content {
+	color: #331200;
 }
 
 #organizations {
@@ -136,6 +137,7 @@
     line-height: 20px;
 }
 
+
 body {
 	background: #eeede2;
 	font-family: 'Cantarell', arial, serif;
@@ -172,12 +174,17 @@ a.link {
 	-moz-border-radius: 5px;
 }
 
-input {
-	height: 30px;
-}
-
 textarea {
 	height: 150px;
+}
+
+#content input,
+#content textarea {
+	border: 1px solid #331200;
+}
+
+input {
+	height: 30px;
 }
 
 input,
@@ -192,7 +199,9 @@ textarea {
 }
 
 input[type="text"],
-textarea {
+input[type="password"],
+textarea 
+	{
 	color: #331200;
 	padding: 0 5px;
 	width: 250px;
@@ -200,7 +209,8 @@ textarea {
 
 input[type="submit"],
 input[type="button"],
-input[type="reset"] {
+input[type="reset"]
+ {
 	background: #e4d5b7;
 	color: #331200;
 	font-weight: bold;
@@ -222,3 +232,42 @@ p {
 	margin: 0;
 	padding: 5px;
 }
+
+/*---- scaffold css ----*/
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: inherit;
+  text-align: center;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+

@@ -1,4 +1,4 @@
-require 'test_helper'
+require File.expand_path(File.dirname(__FILE__) + "/../test_helper")
 
 class OrganizationsControllerTest < ActionController::TestCase
 
@@ -66,9 +66,19 @@ class OrganizationsControllerTest < ActionController::TestCase
     
     assert_search_successful [organizations(:wwf), organizations(:redcross)], assigns(:organizations)
   end
+
+  test "should be able to edit organization when match password" do
+    get :ajax_edit, :id => organizations(:wwf).id, :password => organizations(:wwf).password
+    assert_response :success
+  end
   
+  test "should not be able to edit organization when password dont match" do
+    get :ajax_edit, :id => organizations(:wwf).id, :password => "wrong_pass"
+    assert :status => :failure
+  end
   private
-  
+ 
+
   def assert_search_successful(expected_results, received_results, message='')
     assert_response :success, message
     assert received_results, message

@@ -1,10 +1,13 @@
-# Sample localization file for Portuguese. Add more files in this directory for other locales.
+﻿# Sample localization file for Portuguese. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 pt:
+  title: "Let's Help It!"
+  organization:
+    register: "Registre sua organização"
   tag:
     food: "Comida"
     clothes: "Roupas"
-    volunteer_work: "Trabalho Voluntario"
+    volunteer_work: "Trabalho Voluntário"
     money: "Dinheiro"
     others: "Outros"

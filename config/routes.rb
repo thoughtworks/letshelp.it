@@ -42,15 +42,13 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
   
-  
   map.connect '/organizations/search', :controller => 'organizations', :action => 'search', :conditions => { :method => :get }
+  map.connect '/organizations/ajax_edit', :controller => 'organizations', :action => 'ajax_edit'
   map.resources :organizations
-#  map.resources :tags
-
   map.resources :organizations, :path_prefix => '/:locale'
+#  map.resources :tags
 
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
-  
 
 end
