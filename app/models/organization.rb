@@ -1,4 +1,5 @@
 class Organization < ActiveRecord::Base
+  has_friendly_id :name, :use_slug => true, :strip_non_ascii => true
 
 	validates_presence_of :name, :contact, :city, :country, :password,  :announcer, :email
 	validates_format_of :email, :with  => /[\w+-][\w.+-]*@\w+\.\w+/, :message => "wrong_mail_address"
