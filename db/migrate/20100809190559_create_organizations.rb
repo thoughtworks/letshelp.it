@@ -2,10 +2,10 @@ class CreateOrganizations < ActiveRecord::Migration
   def self.up
     create_table :organizations do |t|
       t.string :name
-      t.string :_name
+      t.string :name_slug
       t.string :contact
       t.string :city
-      t.string :_city
+      t.string :city_slug
       t.string :country
       t.text :needs
 		
