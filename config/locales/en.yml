@@ -3,6 +3,8 @@
 
 en:
   title: "Let's Help It!"
+  howto_help: "How to help?"
+  whereto_help: "City, State, Country, Planet, ..."
   organization:
     register: "Register your organization"
   tag:

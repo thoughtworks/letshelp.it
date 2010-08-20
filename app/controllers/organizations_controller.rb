@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
 
   before_filter :find_organization, :only => [:show, :edit, :update, :destroy]
-  before_filter :find_all_tags, :only => [:new, :show, :create, :ajax_edit, :update]
+  before_filter :find_all_tags
   
 private
   def find_organization
@@ -93,9 +93,13 @@ public
   end
   
   def search
-     @organizations = Organization.find(:all, :conditions => "name like '%#{params[:q]}%' OR city like '%#{params[:q]}%'")
-     tag = Tag.find(:all, :conditions => "name like '%#{params[:q]}%'")[0]
-     @organizations = (@organizations | tag.organizations) if not tag.nil?   
+    tag_ids = params[:tag_ids]
+    @organizations = Organization.find(:all, :conditions => "name like '%#{params[:q]}%' OR city like '%#{params[:q]}%'")
+    if tag_ids && !tag_ids.empty?
+      tags = Tag.find(*tag_ids.inject([]) {|a,v| a << v.to_i})
+      tags = [tags] if !tags.is_a? Array
+      @organizations &= tags.inject([]) { |a,tag| a<< tag.organizations }[0].uniq
+    end
     
     respond_to do |format|
       format.html { render :action => :index }

@@ -3,6 +3,8 @@
 
 pt:
   title: "Let's Help It!"
+  howto_help: "Como ajudar?"
+  whereto_help: "Cidade, Estado, País, Planeta, ..."
   organization:
     register: "Registre sua organização"
   tag:

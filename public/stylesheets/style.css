@@ -137,6 +137,21 @@
     line-height: 20px;
 }
 
+#search_tags label,
+#search_tags label input
+{
+    color: white;
+    font-size: 18px;
+    vertical-align: middle;
+    height: 20px;
+    line-height: 20px;
+}
+
+#search_message {
+    color: white;
+    text-align: left;
+    font-size: 10px;
+}
 
 body {
 	background: #eeede2;

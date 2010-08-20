@@ -61,10 +61,19 @@ class OrganizationsControllerTest < ActionController::TestCase
     assert_search_successful [organizations(:wwf)], assigns(:organizations)
   end
 
-  test "should reply the organizations related to a tag name in the search term" do
+  test "should not reply the organizations related to a tag name in the search term" do
     get :search, :q => 'food'
-    
-    assert_search_successful [organizations(:wwf), organizations(:redcross)], assigns(:organizations)
+    assert_search_successful [], assigns(:organizations)
+  end
+  
+  test "should reply search filtered by the selected tags" do
+    get :search, :q => 'r', :tag_ids => [tags(:cloth).id.to_s]
+    assert_search_successful [organizations(:wwf)], assigns(:organizations)
+  end
+  
+  test "should return all organizations with the given tags" do
+    get :search, :tag_ids => [tags(:food).id.to_s]
+    assert_search_successful [organizations(:redcross), organizations(:wwf)], assigns(:organizations)
   end
 
   test "should be able to edit organization when match password" do
@@ -76,8 +85,8 @@ class OrganizationsControllerTest < ActionController::TestCase
     get :ajax_edit, :id => organizations(:wwf).id, :password => "wrong_pass"
     assert :status => :failure
   end
+  
   private
- 
 
   def assert_search_successful(expected_results, received_results, message='')
     assert_response :success, message
