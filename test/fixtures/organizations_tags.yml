@@ -13,3 +13,15 @@ wwf_food:
 wwf_cloth:
   organization_id: 2
   tag_id: 5
+  
+xpto_food:
+  organization_id: 3
+  tag_id: 3
+    
+xpto_money:
+  organization_id: 3
+  tag_id: 4
+
+xpto_cloth:
+  organization_id: 3
+  tag_id: 5

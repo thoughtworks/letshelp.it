@@ -3,10 +3,6 @@
 one:
   id: 1
   name: MyString
-
-two:
-  id: 2
-  name: MyStringTwo
   
 food:
   id: 3

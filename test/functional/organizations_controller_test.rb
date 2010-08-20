@@ -73,7 +73,7 @@ class OrganizationsControllerTest < ActionController::TestCase
   
   test "should return all organizations with the given tags" do
     get :search, :tag_ids => [tags(:food).id.to_s]
-    assert_search_successful [organizations(:redcross), organizations(:wwf)], assigns(:organizations)
+    assert_search_successful [organizations(:redcross), organizations(:wwf), organizations(:xpto)], assigns(:organizations)
   end
 
   test "should be able to edit organization when match password" do

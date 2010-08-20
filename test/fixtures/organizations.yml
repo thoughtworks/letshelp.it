@@ -21,3 +21,14 @@ wwf:
   password: 1
   email: a@a.a
   announcer: announcer
+
+xpto:
+  id: 3
+  name: XPTO
+  contact: lululu
+  city: xpto city
+  country: Brazil
+  needs: mucha cosa
+  password: 1
+  email: a@a.a
+  announcer: announcer
