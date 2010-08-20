@@ -95,11 +95,7 @@ public
   def search
     tag_ids = params[:tag_ids]
     @organizations = Organization.find(:all, :conditions => "name like '%#{params[:q]}%' OR city like '%#{params[:q]}%'")
-    if tag_ids && !tag_ids.empty?
-      tags = Tag.find(*tag_ids.inject([]) {|a,v| a << v.to_i})
-      tags = [tags] if !tags.is_a? Array
-      @organizations &= tags.inject([]) { |a,tag| a<< tag.organizations }[0].uniq
-    end
+    @organizations &= Tag.find(tag_ids.inject([]) {|a,v| a << v.to_i}).inject([]) { |a,tag| a<< tag.organizations }[0].uniq if tag_ids && !tag_ids.empty?
     
     respond_to do |format|
       format.html { render :action => :index }
