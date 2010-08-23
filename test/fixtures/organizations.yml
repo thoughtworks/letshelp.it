@@ -3,6 +3,7 @@
 redcross:
   id: 1
   name: Red Cross
+  name_slug: red-cross
   contact: lalala
   city: Springfield
   country: USA
@@ -14,6 +15,7 @@ redcross:
 wwf:
   id: 2
   name: WWF Brasil
+  name_slug: wwf-brasil
   contact: lululu
   city: Tangamandapio
   country: Brazil
@@ -25,6 +27,7 @@ wwf:
 xpto:
   id: 3
   name: XPTO
+  name_slug: xpto
   contact: lululu
   city: xpto city
   country: Brazil

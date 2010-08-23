@@ -45,7 +45,7 @@ class OrganizationTest < ActiveSupport::TestCase
     params = { :name => 'Minha organização', :contact => 'test@test.com', :city => 'Porto Alegre',
       :country => 'Brazil', :needs => 'mucha cosa', :password => '1', :email => 'test@test.com', :announcer => 'announcer'}
     org = Organization.create(params)
-    assert org.name_slug == "minha-organizacao", "name slug is '#{org.name_slug}', but 'minha-organizacao' was expected"
+    assert_equal "minha-organizacao", org.name_slug, "name slug is '#{org.name_slug}', but 'minha-organizacao' was expected"
   end
   
 end
