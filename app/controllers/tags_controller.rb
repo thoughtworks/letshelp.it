@@ -96,12 +96,4 @@ class TagsController < ApplicationController
     end
   end
 
-  def rank
-    @ranked_tags = Tag.all.inject([]) { |a,t| a << [t, t.organizations.count] }.sort { |a,b| a[1] <=> b[1] }.reverse
-    
-    respond_to do |format|
-      format.js
-    end
-  end
-
 end

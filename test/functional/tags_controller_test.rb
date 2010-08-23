@@ -56,17 +56,4 @@ class TagsControllerTest < ActionController::TestCase
   end 
 =end
 
-  test "should return the five most used tags ordered by quantity of use" do
-    get :rank
-    assert_response :success
-    
-    assert assigns(:ranked_tags)
-    assert_equal [
-      [tags(:food), 3],
-      [tags(:cloth), 2],
-      [tags(:money), 2],
-      [tags(:one), 0]
-      ], assigns(:ranked_tags)
-  end
-
 end
