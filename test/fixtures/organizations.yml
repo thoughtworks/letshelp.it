@@ -6,6 +6,7 @@ redcross:
   name_slug: red-cross
   contact: lalala
   city: Springfield
+  city_slug: springfield
   country: USA
   needs: Lots of rice
   password: 1
@@ -18,6 +19,7 @@ wwf:
   name_slug: wwf-brasil
   contact: lululu
   city: Tangamandapio
+  city_slug: tangamandapio
   country: Brazil
   needs: money
   password: 1
@@ -30,6 +32,7 @@ xpto:
   name_slug: xpto
   contact: lululu
   city: xpto city
+  city_slug: xpto city
   country: Brazil
   needs: mucha cosa
   password: 1

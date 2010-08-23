@@ -1,3 +1,5 @@
+#utf-8
+
 require File.expand_path(File.dirname(__FILE__) + "/../test_helper")
 
 class OrganizationsControllerTest < ActionController::TestCase
@@ -17,7 +19,7 @@ class OrganizationsControllerTest < ActionController::TestCase
 
   test "should create organization" do
     assert_difference('Organization.count') do
-      post :create, :organization => { :name => "title", :contact => "contact", :city => "city", :password => "password", :email => "email@mail.com" , :country => "country", :announcer => "announcer" }
+      post :create, :organization => { :name => "title", :contact => "contact", :city => "Jaragua do Sul", :password => "password", :email => "email@mail.com" , :country => "country", :announcer => "announcer" }
     end
     assert_redirected_to organization_path(assigns(:organization))
   end

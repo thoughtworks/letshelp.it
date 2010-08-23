@@ -51,8 +51,8 @@ public
   # POST /organizations
   # POST /organizations.xml
   def create
-    @organization = Organization.new(params[:organization])
     params[:organization][:tag_ids] ||= []
+    @organization = Organization.new(params[:organization])
 
     respond_to do |format|
       if @organization.save
