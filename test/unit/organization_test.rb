@@ -1,3 +1,5 @@
+# coding: utf-8
+
 require File.expand_path(File.dirname(__FILE__) + "/../test_helper")
 
 class OrganizationTest < ActiveSupport::TestCase
@@ -39,5 +41,11 @@ class OrganizationTest < ActiveSupport::TestCase
     assert valid_org.valid?
   end
 
+  test "should create slug name with approximated ascii characters" do
+    params = { :name => 'Minha organização', :contact => 'test@test.com', :city => 'Porto Alegre',
+      :country => 'Brazil', :needs => 'mucha cosa', :password => '1', :email => 'test@test.com', :announcer => 'announcer'}
+    org = Organization.create(params)
+    assert org.name_slug == "minha-organizacao", "name slug is '#{org.name_slug}', but 'minha-organizacao' was expected"
+  end
   
 end

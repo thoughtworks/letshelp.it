@@ -13,10 +13,10 @@ ActiveRecord::Schema.define(:version => 20100819182551) do
 
   create_table "organizations", :force => true do |t|
     t.string   "name"
-    t.string   "_name"
+    t.string   "name_slug"
     t.string   "contact"
     t.string   "city"
-    t.string   "_city"
+    t.string   "city_slug"
     t.string   "country"
     t.text     "needs"
     t.string   "password"
