@@ -47,9 +47,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :organizations
   map.resources :organizations, :path_prefix => '/:locale'
   
-  map.connect '/tags/rank', :controller => 'tags', :action => 'rank', :conditions => { :method => :get }
-#  map.resources :tags
-
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
 
