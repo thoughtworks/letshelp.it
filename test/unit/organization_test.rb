@@ -6,6 +6,8 @@ class OrganizationTest < ActiveSupport::TestCase
   
   should validate_presence_of :name  
   should validate_presence_of :contact
+  should validate_presence_of :city
+  should validate_presence_of :city_slug
   should validate_presence_of :country
   should validate_presence_of :password
   should validate_presence_of :email
@@ -40,9 +42,21 @@ class OrganizationTest < ActiveSupport::TestCase
 
     assert valid_org.valid?
   end
+  
+  test "should create slug city automatically" do
+    org = organizations(:wwf)
+    
+    org.city = 'Jaraguá do Sul'
+    assert_equal 'jaragua do sul', org.city_slug
+    assert org.save
+    
+    org.city = 'São Paulo'
+    assert_equal 'sao paulo', org.city_slug
+    assert org.save
+  end
 
   test "should create slug name with approximated ascii characters" do
-    params = { :name => 'Minha organização', :contact => 'test@test.com', :city => 'Porto Alegre',
+    params = { :name => 'Minha organização', :contact => 'test@test.com', :city => 'Porto Alegre', :city_slug => 'porto alegre',
       :country => 'Brazil', :needs => 'mucha cosa', :password => '1', :email => 'test@test.com', :announcer => 'announcer'}
     org = Organization.create(params)
     assert_equal "minha-organizacao", org.name_slug, "name slug is '#{org.name_slug}', but 'minha-organizacao' was expected"
