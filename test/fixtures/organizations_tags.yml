@@ -25,3 +25,7 @@ xpto_money:
 xpto_cloth:
   organization_id: 3
   tag_id: 5
+
+greenpeace_one:
+  organization_id: 4
+  tag_id: 1

@@ -38,3 +38,16 @@ xpto:
   password: 1
   email: a@a.a
   announcer: announcer
+
+greenpeace:
+  id: 4
+  name: Greenpeace
+  name_slug: greenpeace
+  contact: lululu
+  city: São Paulo
+  city_slug: sao paulo
+  country: Brazil
+  needs: mucha cosa
+  password: 1
+  email: a@a.a
+  announcer: announcer

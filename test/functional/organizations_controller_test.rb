@@ -77,6 +77,11 @@ class OrganizationsControllerTest < ActionController::TestCase
     get :search, :tag_ids => [tags(:food).id.to_s]
     assert_search_successful [organizations(:redcross), organizations(:wwf), organizations(:xpto)], assigns(:organizations)
   end
+  
+  test "should be able to find cities with accent" do
+    get :search, :q => 'sao paulo'
+    assert_search_successful [organizations(:greenpeace)], assigns(:organizations)
+  end
 
   test "should be able to edit organization when match password" do
     get :ajax_edit, :id => organizations(:wwf).id, :password => organizations(:wwf).password
