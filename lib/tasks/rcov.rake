@@ -20,7 +20,7 @@ def run_coverage(files)
   #  exclude = '--exclude "rubygems/*"'
   #end
  
-  rcov = "rcov --rails -Ilib:test --sort coverage --text-report #{exclude} --aggregate #{OUTPUT_DIR}/coverage.data"
+  rcov = "rcov --rails -Ilib:test --sort coverage --text-report #{exclude} --output #{OUTPUT_DIR}"
   cmd = "#{rcov} #{files}"
   sh cmd
 end
