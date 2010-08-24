@@ -7,7 +7,6 @@ class OrganizationTest < ActiveSupport::TestCase
   should validate_presence_of :name  
   should validate_presence_of :contact
   should validate_presence_of :city
-  should validate_presence_of :city_slug
   should validate_presence_of :country
   should validate_presence_of :password
   should validate_presence_of :email
