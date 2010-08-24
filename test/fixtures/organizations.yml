@@ -51,3 +51,16 @@ greenpeace:
   password: 1
   email: a@a.a
   announcer: announcer
+  
+santa_casa:
+  id: 5
+  name: Santa Casa de Misericórdia de São Paulo
+  name_slug: santa-casa-de-misericordia-de-sao-paulo
+  contact: lululu
+  city: São Paulo
+  city_slug: sao paulo
+  country: Brazil
+  needs: mucha cosa
+  password: 1
+  email: a@a.a
+  announcer: announcer

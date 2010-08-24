@@ -53,8 +53,14 @@ class OrganizationsControllerTest < ActionController::TestCase
 
   test "should reply the organizations related to a name in the search term" do
     get :search, :q => 'Red Cross'
-    
+#    require 'debug'
     assert_search_successful [organizations(:redcross)], assigns(:organizations)
+    
+    get :search, :q => 'santa Casa de misericordia'
+    assert_search_successful [organizations(:santa_casa)], assigns(:organizations)
+    
+    get :search, :q => 'misericórdia'
+    assert_search_successful [organizations(:santa_casa)], assigns(:organizations)
   end
   
   test "should reply the organizations related to a city in the search term" do
@@ -78,9 +84,12 @@ class OrganizationsControllerTest < ActionController::TestCase
     assert_search_successful [organizations(:redcross), organizations(:wwf), organizations(:xpto)], assigns(:organizations)
   end
   
-  test "should be able to find cities with accent" do
+  test "should be able to find cities with and without accent" do
+    get :search, :q => 'são paulo'
+    assert_search_successful [organizations(:greenpeace), organizations(:santa_casa)], assigns(:organizations)
+    
     get :search, :q => 'sao paulo'
-    assert_search_successful [organizations(:greenpeace)], assigns(:organizations)
+    assert_search_successful [organizations(:greenpeace), organizations(:santa_casa)], assigns(:organizations)
   end
 
   test "should be able to edit organization when match password" do

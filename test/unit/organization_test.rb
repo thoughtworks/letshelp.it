@@ -27,6 +27,16 @@ class OrganizationTest < ActiveSupport::TestCase
     assert !org.has_tag?(tags(:money)), 'doesn\'t has tag money'
   end
   
+  test "should slug organization name" do
+    assert_equal 'nacao-da-vo-lurdes', Organization.slug_name('Nação da Vó Lurdes')
+    assert_equal 'santa-casa-de-misericordia-de-sao-paulo', Organization.slug_name('Santa Casa de Misericórdia de São Paulo')
+  end
+  
+  test "should slug city name" do
+    assert_equal 'jaragua do sul', Organization.slug_city('Jaraguá do Sul')
+    assert_equal 'sao paulo', Organization.slug_city('São Paulo')
+  end
+  
   test "should create slug city automatically" do
     org = organizations(:wwf)
     
