@@ -9,5 +9,7 @@ gem 'babosa'
 group :test do
   gem 'thoughtbot-shoulda', :require => 'shoulda/rails'
   gem 'test-unit'
+  gem 'rcov'
+  gem 'ruby-prof'
 end
 
