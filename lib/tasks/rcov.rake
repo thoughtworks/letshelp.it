@@ -3,7 +3,7 @@
 OUTPUT_DIR = 'coverage'
 
 def run_coverage(files)
-  rm_f OUTPUT_DIR
+  rm_rf OUTPUT_DIR
  
   # turn the files we want to run into a  string
   if files.length == 0

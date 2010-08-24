@@ -1,4 +1,8 @@
+coverage
+coverage/*
 log/*
+tmp
+tmp/*
 *.DS_Store
 .rvmrc
 *.sqlite3
