@@ -14,33 +14,18 @@ class OrganizationTest < ActiveSupport::TestCase
   should validate_presence_of :announcer  
 
   should validate_uniqueness_of :name
+  
+  should_not allow_value("invalidmail").for(:email)
+  should_not allow_value("@b.com").for(:email)
+  should allow_value("a@b.com").for(:email)
+  should allow_value("valid.string+alias@mail.com").for(:email)
  
   test "should return if the given tag is associated to the organization" do
-    
     org = organizations(:wwf)
-    org.tags = [tags(:money), tags(:food)]
     
-    assert org.has_tag?(tags(:money)), 'has tag money'
-    assert org.has_tag?(tags(:food)), 'has tag money'
-    assert !org.has_tag?(tags(:cloth)), 'don\'t has tag cloth'
-  end
-
-  test "should validate email only with format like abc@de.fg" do
-    invalid_org = organizations(:wwf)
-    invalid_org.email = "invalidmail"
-    valid_org = organizations(:redcross)
-    valid_org.email = "valid.string+alias@mail.com"
- 
-    assert !invalid_org.valid?
-    assert valid_org.valid?
-  end
-
-  test "bugfix: should create organization with only one char before 'a'" do
-     
-    valid_org = organizations(:wwf)
-    valid_org.email = "a@a.a"
-
-    assert valid_org.valid?
+    assert org.has_tag?(tags(:cloth)), 'have tag cloth'
+    assert org.has_tag?(tags(:food)), 'have tag food'
+    assert !org.has_tag?(tags(:money)), 'doesn\'t has tag money'
   end
   
   test "should create slug city automatically" do
