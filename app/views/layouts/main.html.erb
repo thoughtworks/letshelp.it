@@ -28,11 +28,11 @@
 					<form id="search_form" name="search_form" method="get" action="/organizations/search">
 						<blockquote id="search_tags"><label><%= t("howto_help") %> </label>
 						<% @tags.each do |tag| %>
-							<label><input type="checkbox" value="<%=tag.id%>" name="tag_ids[]" <%= "" %>/> <%= t("tag.#{tag.name}") %></label>
+							<label><input type="checkbox" value="<%=tag.id%>" name="tag_ids[]" <%= ( (params[:tag_ids].member? tag.id.to_s) ? "checked":"") if not params[:tag_ids].nil? %> /> <%= t("tag.#{tag.name}") %></label>
 						<% end %></blockquote>
 						<table align="center" id="search_table">
 							<tr>
-								<td><input id="search_query" name="q" type="text" /></td>
+								<td><input id="search_query" name="q" type="text" value="<%= params[:q]%>" /></td>
 								<td><input id="search" type="submit" value="<%= t("find") %>" /></td>
 							</tr>
 							<tr>
