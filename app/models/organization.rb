@@ -13,13 +13,11 @@ class Organization < ActiveRecord::Base
 
   def city=(name)
     write_attribute(:city, name)
-    write_attribute(:city_slug, slug_city(name)) if name
+    write_attribute(:city_slug, Organization.slug_city(name)) if name
   end
   
-  private
-  
-  def slug_city(name)
-    name.to_slug.approximate_ascii.to_s.downcase
+  def self.slug_city(name)
+    name.to_s.to_slug.approximate_ascii.to_s.downcase
   end
 
 end

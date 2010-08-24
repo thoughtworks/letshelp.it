@@ -78,7 +78,10 @@ class OrganizationsControllerTest < ActionController::TestCase
     assert_search_successful [organizations(:redcross), organizations(:wwf), organizations(:xpto)], assigns(:organizations)
   end
   
-  test "should be able to find cities with accent" do
+  test "should be able to find cities with and without accent" do
+    get :search, :q => 'são paulo'
+    assert_search_successful [organizations(:greenpeace)], assigns(:organizations)
+    
     get :search, :q => 'sao paulo'
     assert_search_successful [organizations(:greenpeace)], assigns(:organizations)
   end
