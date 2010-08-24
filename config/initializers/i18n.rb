@@ -1,1 +1,3 @@
-I18n.default_locale = :en
+# coding: utf-8
+
+I18n.default_locale = :pt

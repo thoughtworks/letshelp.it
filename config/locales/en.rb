@@ -5,6 +5,7 @@
     :title => "Let's Help It!",
     :howto_help => "How to help?",
     :whereto_help => "City, State, Country, Planet, ...",
+    :find => "Find!",
     :organization => {
       :register => "Register your organization"  
     },
