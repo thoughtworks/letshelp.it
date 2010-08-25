@@ -19,7 +19,7 @@ class OrganizationTest < ActiveSupport::TestCase
   should allow_value("a@b.com").for(:email)
   should allow_value("valid.string+alias@mail.com").for(:email)
  
-  test "should return if the given tag is associated to the organization" do
+  should "return if the given tag is associated to the organization" do
     org = organizations(:wwf)
     
     assert org.has_tag?(tags(:cloth)), 'have tag cloth'
@@ -27,17 +27,17 @@ class OrganizationTest < ActiveSupport::TestCase
     assert !org.has_tag?(tags(:money)), 'doesn\'t has tag money'
   end
   
-  test "should slug organization name" do
+  should "slug organization name" do
     assert_equal 'nacao-da-vo-lurdes', Organization.slug_name('Nação da Vó Lurdes')
     assert_equal 'santa-casa-de-misericordia-de-sao-paulo', Organization.slug_name('Santa Casa de Misericórdia de São Paulo')
   end
   
-  test "should slug city name" do
+  should "slug city name" do
     assert_equal 'jaragua do sul', Organization.slug_city('Jaraguá do Sul')
     assert_equal 'sao paulo', Organization.slug_city('São Paulo')
   end
   
-  test "should create slug city automatically" do
+  should "create slug city automatically" do
     org = organizations(:wwf)
     
     org.city = 'Jaraguá do Sul'
@@ -49,7 +49,7 @@ class OrganizationTest < ActiveSupport::TestCase
     assert org.save
   end
 
-  test "should create slug name with approximated ascii characters" do
+  should "create slug name with approximated ascii characters" do
     params = { :name => 'Minha organização', :contact => 'test@test.com', :city => 'Porto Alegre', :city_slug => 'porto alegre',
       :country => 'Brazil', :needs => 'mucha cosa', :password => '1', :email => 'test@test.com', :announcer => 'announcer'}
     org = Organization.create(params)
