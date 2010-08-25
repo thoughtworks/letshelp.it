@@ -15,6 +15,11 @@
     <div id="container">
 			
 			<div id="header">
+        <div id="locale_menu">
+          <form method="get">
+            <%= select_tag("locale", options_for_select(I18n.available_locales, I18n.locale), { :onchange => 'this.form.submit()'}) %>
+          </form>
+        </div>
 				<div id="logo">
 					<h1><%= link_to t("title"), :root %></h1>
 				</div>
