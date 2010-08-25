@@ -95,7 +95,9 @@ public
   def search
     tag_ids = params[:tag_ids]
     @organizations = Organization.find(:all, :conditions => "name_slug like '%#{Organization.slug_name(params[:q])}%' OR city_slug like '%#{Organization.slug_city(params[:q])}%'")
-    @organizations &= Tag.find(tag_ids.inject([]) {|a,v| a << v.to_i}).inject([]) { |a,tag| a<< tag.organizations }[0].uniq if tag_ids && !tag_ids.empty?
+#    require 'debug' if tag_ids
+    @organizations &= Tag.find(tag_ids).inject([]) { |a,t| a + t.organizations } if tag_ids && !tag_ids.empty?
+    #Tag.find(:all, tag_ids.inject([]) {|a,v| a << v.to_i}).inject([]) { |a,tag| a + tag.organizations }.uniq if tag_ids && !tag_ids.empty?
     
     respond_to do |format|
       format.html { render :action => :index }

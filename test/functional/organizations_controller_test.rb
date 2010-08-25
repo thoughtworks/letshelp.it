@@ -1,5 +1,3 @@
-#utf-8
-
 require File.expand_path(File.dirname(__FILE__) + "/../test_helper")
 
 class OrganizationsControllerTest < ActionController::TestCase
@@ -53,7 +51,6 @@ class OrganizationsControllerTest < ActionController::TestCase
 
   test "should reply the organizations related to a name in the search term" do
     get :search, :q => 'Red Cross'
-#    require 'debug'
     assert_search_successful [organizations(:redcross)], assigns(:organizations)
     
     get :search, :q => 'santa Casa de misericordia'
@@ -82,6 +79,9 @@ class OrganizationsControllerTest < ActionController::TestCase
   test "should return all organizations with the given tags" do
     get :search, :tag_ids => [tags(:food).id.to_s]
     assert_search_successful [organizations(:redcross), organizations(:wwf), organizations(:xpto)], assigns(:organizations)
+    
+    get :search, :tag_ids => [tags(:cloth).id.to_s, tags(:money).id.to_s]
+    assert_search_successful [organizations(:wwf), organizations(:xpto), organizations(:redcross)], assigns(:organizations)
   end
   
   test "should be able to find cities with and without accent" do
@@ -104,12 +104,12 @@ class OrganizationsControllerTest < ActionController::TestCase
   
   private
 
-  def assert_search_successful(expected_results, received_results, message='')
-    assert_response :success, message
-    assert received_results, message
-    assert_equal expected_results.size, received_results.size
+  def assert_search_successful(expected_results, received_results)
+    assert_response :success
+    assert received_results
+    assert_equal expected_results.size, received_results.size, "Expected [#{expected_results.inject([]) {|a,o| a << o.name}.join(', ')}], but got [#{received_results.inject([]) {|a,o| a << o.name}.join(', ')}]."
     expected_results.each do |r|
-      assert received_results.include?(r), message
+      assert received_results.include?(r), "Could not find #{r.name}"
     end
   end
 
