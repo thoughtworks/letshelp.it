@@ -1,34 +1,35 @@
 	<p>
-		<b>Name:</b>
+		<b><%=t("org_form.name")%>:</b>
 		<%=h @organization.name %>
 	</p>
 
 	<p>
-		<b>Contact:</b>
+		<b><%=t("org_form.contact")%>:</b>
 		<%=h @organization.contact %>
 	</p>
 
 	<p>
-		<b>City:</b>
+		<b><%=t("org_form.city")%>:</b>
 		<%=h @organization.city %>
 	</p>
 
 	<p>
-		<b>Country:</b>
+		<b><%=t("org_form.country")%>:</b>
 		<%=h @organization.country %>
 	</p>
 
 	<p>
-		<b>Tags:</b>
+		<b><%=t("org_form.tags")%>:</b>
     <%= @organization.tags.inject([]){|a,tag| a<<t("tag.#{tag.name}")}.join(', ')  %>
 	</p>
 
 	<p>
-		<b>Needs:</b>
+		<b><%=t("org_form.needs")%>:</b>
 		<%=h @organization.needs %>
 	</p>
 
-
-	<%= link_to 'edit', edit_organization_path(@organization), :class => 'link'  %>
-
-	<%= link_to t('twitter_share.button'), compose_twitter_share_url(), :popup => true, :class => 'link'  %>
+  <br />  
+  <p>
+	  <%= link_to t('org_form.edit_button'), edit_organization_path(@organization), :class => 'link'  %>
+	  <%= link_to t('twitter_share.button'), compose_twitter_share_url(), :popup => true, :class => 'link'  %>
+	</p>

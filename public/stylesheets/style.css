@@ -176,17 +176,26 @@ a {
 }
 
 a:hover {
-	background-color:transparent
+	background-color:transparent;
 	color:#333333;
+
 }
 
 a.link {
-	background-color:#ffffff;
+  opacity: 0.8;
+  font-weight: bold;
+  color: #331200;
+	background: #E4D5B7;
 	margin: 5px;
 	padding: 5px;
+	border: 1px solid #331200;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
+}
+
+a.link:hover {
+	  opacity: 1;
 }
 
 textarea {

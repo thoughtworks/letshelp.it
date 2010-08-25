@@ -2,26 +2,26 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label t("org_form.name") %><br />
     <%= f.text_field :name %>
   </p>
   
   <p>
-    <%= f.label :contact %> <span class="smooth_text">contact_info</span> <br />
+    <%= f.label t("org_form.contact") %><span class="smooth_text"> (<%=t("contact_info")%>)</span><br />
     <%= f.text_field :contact %>
   </p>
   <p>
-    <%= f.label :city %><br />
+    <%= f.label t("org_form.city") %><br />
     <%= f.text_field :city %>
   </p>
   <p>
-    <%= f.label :country %><br />
+    <%= f.label t("org_form.country") %><br />
     <%= f.text_field :country %>
   </p>
 
 
   <p>
-    <%= f.label :tags %><br />
+    <%= f.label t("org_form.tags") %><br />
     <blockquote id="list_tags"> 
       <% @tags.each do |tag| -%>
         <label><input type="checkbox" value="<%=tag.id%>" name="organization[tag_ids][]" <%= @organization.tags.include?(tag) ? "checked=\"checked\"" : "" %>/> <%= t("tag.#{tag.name}") %></label><br />
@@ -30,28 +30,28 @@
   </p>
 
   <p>
-    <%= f.label :needs %><br />
+    <%= f.label t("org_form.needs") %><br />
     <%= f.text_area :needs %>
   </p>
   
   <div id="announcer_infos">
-  	<p>announcer_info</p>
+  	<p><%=t("announcer_info")%></p>
 		<p>
-		  <%= f.label :announcer %><br />
+		  <%= f.label t("org_form.announcer") %><br />
 		  <%= f.text_field :announcer %>
 		</p>
 	  <p>
-		  <%= f.label :password %><br />
+		  <%= f.label t("org_form.password") %><br />
 		  <%= f.password_field :password %>
 		</p>
 		<p>
-		  <%= f.label :email %><br />
+		  <%= f.label t("org_form.email") %><br />
 		  <%= f.text_field :email %>
 		</p>
   </div>
   
   <p>
-    <%= f.submit action %>
+    <%= f.submit action , :value => controller.action_name == "new" ? t("org_form.create_button") : t("org_form.update_button")%>
   </p>
 
 <% end %>

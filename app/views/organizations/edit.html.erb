@@ -1,16 +1,16 @@
 <%= javascript_include_tag 'jquery' %>
 
-<h1>Update your organization</h1>
+<h1><%=t("organization.update", :organization => @organization.name)%>:</h1>
 
 <div id="edit_form">
 
-  <p>enter_password</p>
+  <p><%=t("enter_password")%>:</p>
   <p id="error_msg" style="color: red"></p>
 
   <form id="submit_pass">
     <input type="hidden" id="id_field" value="<%=@organization.id %>" />
     <input type="password" id="pass_field" />
-    <input type="submit" value="submit" />
+    <input type="submit" value="<%=t("validate")%>" /> 
   </form>
 
 </div>
