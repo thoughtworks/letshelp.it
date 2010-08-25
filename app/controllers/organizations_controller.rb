@@ -43,7 +43,7 @@ public
       if(@organization.password == params[:password]) then
         format.js { render :partial => "organizations/form" , :locals => { :action => "Update" } }
       else
-        format.js { render :text => "wrong_password", :status => :failure }
+        format.js { render :text => t("wrong_password"), :status => :failure }
       end
     end
   end
@@ -56,7 +56,7 @@ public
 
     respond_to do |format|
       if @organization.save
-        flash[:notice] = 'Organization was successfully created.'
+        flash[:notice] = t("organization.success_created")
         format.html { redirect_to(@organization) }
       else
         @tag = Tag.new
@@ -73,7 +73,7 @@ public
 
     respond_to do |format|
       if @organization.update_attributes(params[:organization])
-        flash[:notice] = 'Organization was successfully updated.'
+        flash[:notice] = t("organization.success_updated")
         format.html { redirect_to(@organization) }
       else
         format.html { render :layout => "main", :partial => "form", :locals => { :action => "Update" } } 

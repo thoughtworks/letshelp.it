@@ -5,13 +5,36 @@
 {
   :pt => {
     #specific info for this app
-    :wrong_mail_address => "E-mail inválido",
+    #:wrong_mail_address => "E-mail inválido",
+    :wrong_password => "Senha inválida",
+    :no_organization_found => "Não foi encontrada nenhuma organização",
     :title => "Let's Help It!",
     :howto_help => "Como ajudar?",
-    :whereto_help => "Cidade, Estado, País, Planeta, ...",
-    :find => "Achar!",
+    :contact_info => "E-mail, telefone, endereço, ...",
+    :whereto_help => "Cidade ou nome da organização",
+    :find => "Buscar!",
+    :announcer_info => "Dados da pessoa que está registrando a organização",
+    :enter_password => "Digite a senha",
+    :validate => "Validar",
     :organization => {
-      :register => "Registre sua organização"
+      :register => "Cadastre uma organização",
+      :update => "Atualize os dados do(a) %{organization}",
+      :success_created => "Organização cadastrada com sucesso.",
+      :success_updated => "Organização atualizada com sucesso."
+    },
+    :org_form => {
+      :name => "Nome",
+      :contact => "Forma de Contato",
+      :city => "Cidade",
+      :country => "País",
+      :tags => "Tags",
+      :needs => "Necessidades",
+      :edit_button => "Editar",
+      :update_button => "Atualizar",
+      :create_button => "Cadastrar",
+      :announcer => "CADASTRADOR!!!!!!!!!!!!",
+      :password => "Senha",
+      :email => "E-mail"
     },
     :tag => {
       :food => "Comida",
@@ -179,11 +202,26 @@
       }
     }, 
     :activerecord => {
+      :models => {
+        :organization => "organização"
+      },
+      :attributes => {
+        :organization => {
+          :name => "Nome",
+          :contact => "Forma de Contato",
+          :city => "Cidade",
+          :country => "País",
+          :needs => "Necessidades",
+          :announcer => "CADASTRADOR!!!!!!!!!!!!",
+          :password => "Senha",
+          :email => "E-mail"
+        }
+      },
       :errors => {
         :template => {
           :header => {
-            :one => "Não foi possível gravar %{model}: 1 erro", 
-            :other => "Não foi possível gravar %{model}: %{count} erros."
+            :one => "Não foi possível gravar o(a) %{model}: 1 erro", 
+            :other => "Não foi possível gravar o(a) %{model}: %{count} erros."
           }, 
           :body => "Por favor, verifique o(s) seguinte(s) campo(s):"
         }, 
