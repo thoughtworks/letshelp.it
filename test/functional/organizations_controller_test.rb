@@ -110,11 +110,7 @@ class OrganizationsControllerTest < ActionController::TestCase
 
   def assert_search_successful(expected_results, received_results)
     assert_response :success
-    assert received_results
-    assert_equal expected_results.size, received_results.size, "Expected [#{expected_results.inject([]) {|a,o| a << o.name}.join(', ')}], but got [#{received_results.inject([]) {|a,o| a << o.name}.join(', ')}]."
-    expected_results.each do |r|
-      assert received_results.include?(r), "Could not find #{r.name}"
-    end
+    assert_same_elements expected_results, received_results, "Expected [#{expected_results.inject([]) {|a,o| a << o.name}.join(', ')}], but got [#{received_results.inject([]) {|a,o| a << o.name}.join(', ')}]."
   end
 
 end
