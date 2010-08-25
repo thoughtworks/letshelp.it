@@ -13,12 +13,11 @@ def run_coverage(files)
  
   files = files.join(" ")
  
-  #crazy hack... not sure what's that about
-  #if PLATFORM =~ /darwin/
+  if PLATFORM =~ /darwin/
     exclude = '--exclude "gems/*"'
-  #else
-  #  exclude = '--exclude "rubygems/*"'
-  #end
+  else
+    exclude = '--exclude "rubygems/*"'
+  end
  
   rcov = "rcov --rails -Ilib:test --sort coverage --text-report #{exclude} --output #{OUTPUT_DIR}"
   cmd = "#{rcov} #{files}"
