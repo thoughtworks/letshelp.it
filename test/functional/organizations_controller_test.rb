@@ -49,6 +49,7 @@ class OrganizationsControllerTest < ActionController::TestCase
     assert_response :success 
   end
 
+
   context "organizations search" do
 
     should "reply the organizations related to a name in the search term" do
@@ -92,6 +93,21 @@ class OrganizationsControllerTest < ActionController::TestCase
     
       get :search, :q => 'sao paulo'
       assert_search_successful [organizations(:greenpeace), organizations(:santa_casa)], assigns(:organizations)
+    end
+  
+    should "not allow SQL injection" do
+      get :search, :q => "' or '1=1"
+      assert_search_successful [], assigns(:organizations)
+      
+      get :search, :q => "%%"
+      assert_search_successful Organization.all, assigns(:organizations)
+      
+      get :search, :q => "%sao paulo%"
+      assert_search_successful [organizations(:greenpeace), organizations(:santa_casa)], assigns(:organizations)
+
+      assert_no_difference "Organization.count" do
+        get :search, :q => "%'); DELETE FROM ""organizations""; SELECT * FROM ""organizations"" WHERE name LIKE '%"
+      end
     end
   
   end
