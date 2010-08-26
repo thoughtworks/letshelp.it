@@ -32,7 +32,7 @@
       :edit_button => "Editar",
       :update_button => "Atualizar",
       :create_button => "Cadastrar",
-      :announcer => "CADASTRADOR!!!!!!!!!!!!",
+      :announcer => "Anunciante",
       :password => "Senha",
       :email => "E-mail"
     },
