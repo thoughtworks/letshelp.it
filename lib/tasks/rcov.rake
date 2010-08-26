@@ -13,7 +13,7 @@ def run_coverage(files)
  
   files = files.join(" ")
  
-  if PLATFORM =~ /darwin/
+  if PLATFORM =~ /darwin/ or PLATFORM =~ /linux/
     exclude = '--exclude "gems/*"'
   else
     exclude = '--exclude "rubygems/*"'
