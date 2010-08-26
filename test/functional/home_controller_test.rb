@@ -2,10 +2,10 @@ require File.expand_path(File.dirname(__FILE__) + "/../test_helper")
 
 class HomeControllerTest < ActionController::TestCase
 
-  should "assign organizations and tags" do
-    get :index
-    assert respond_with :success
-    assert assign_to :organizations
-    assert assign_to :tags
+  context "index page" do
+    setup { get :index }
+    should respond_with :success
+    should assign_to :organizations
+    should assign_to :tags
   end
 end
