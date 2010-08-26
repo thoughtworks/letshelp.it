@@ -1,15 +1,10 @@
 class OrganizationsController < ApplicationController
 
   before_filter :find_organization, :only => [:show, :edit, :update, :destroy]
-  before_filter :find_all_tags
   
 private
   def find_organization
   	@organization = Organization.find(params[:id])
-  end
-  
-  def find_all_tags
-  	@tags = Tag.all
   end
   
 public
