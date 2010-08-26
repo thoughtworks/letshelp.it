@@ -6,6 +6,8 @@
   :pt => {
     #specific info for this app
     #:wrong_mail_address => "E-mail inválido",
+    :forum => "Fórum",
+    :about => "Sobre",
     :wrong_password => "Senha inválida",
     :no_organization_found => "Não foi encontrada nenhuma organização",
     :title => "Let's Help It!",

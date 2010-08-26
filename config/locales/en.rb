@@ -4,6 +4,8 @@
 
 {
   :en => {
+    :forum => "Forum",
+    :about => "About",
     :wrong_password => "Invalid password",
     :no_organization_found => "No organization was found",
     :title => "Let's Help It!",
