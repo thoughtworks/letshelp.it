@@ -25,7 +25,7 @@
 
 	<p>
 		<b><%=t("org_form.needs")%>:</b>
-		<%=h @organization.needs %>
+		<%= RedCloth.new(@organization.needs).to_html %>
 	</p>
 
   <br />  
