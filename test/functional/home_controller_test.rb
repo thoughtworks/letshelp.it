@@ -13,7 +13,8 @@ class HomeControllerTest < ActionController::TestCase
 
     context "in portuguese" do
       setup do
-        get :about, :locale => 'pt'
+        session[:locale] = 'pt'
+        get :about
       end
       
       should respond_with :success
@@ -23,7 +24,8 @@ class HomeControllerTest < ActionController::TestCase
 
     context "in english" do
       setup do
-        get :about, :locale => 'en'
+        session[:locale] = 'en'
+        get :about
       end
       
       should respond_with :success
@@ -33,7 +35,8 @@ class HomeControllerTest < ActionController::TestCase
 
     context "in any other language" do
       setup do
-        get :about, :locale => 'foo'
+        session[:locale] = 'foo'
+        get :about
       end
       
       should respond_with :success
@@ -43,4 +46,45 @@ class HomeControllerTest < ActionController::TestCase
     
   end
   
+  context "locale settings" do
+
+    should "have portuguese as default language" do
+      get :index
+      assert_equal :pt, I18n.locale
+    end
+
+    should "get language from the browser request" do
+      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,en-us;p=0.5'
+      get :index
+      assert_equal :en, I18n.locale
+    end
+
+    should "not get language from the browser request if it isn't available in the application" do
+      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,it;p=0.5' 
+      get :index
+      assert_equal I18n.default_locale, I18n.locale
+    end
+
+    should "get locale from session" do
+      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt;p=0.5'  
+      session[:locale] = 'en'
+      get :index
+      assert_equal session[:locale].to_sym, I18n.locale
+    end
+
+    should "get locale from params" do
+      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt;p=0.5'
+      locale = 'en'
+      get :index, :locale => locale
+      assert_equal locale.to_sym, I18n.locale
+    end
+
+    should "get locale from params if both params and session are set" do
+      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt;p=0.5'
+      session[:locale] = 'pt'
+      locale = 'en'
+      get :index, :locale => locale
+      assert_equal locale.to_sym, I18n.locale
+    end
+  end
 end

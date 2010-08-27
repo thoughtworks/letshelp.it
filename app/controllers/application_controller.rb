@@ -8,20 +8,24 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :find_all_tags
 
-  private
+  protected
     def find_all_tags
     	@tags = Tag.all
     end
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+    def set_locale
+      locale_verifier = LocaleVerifier.new(I18n.available_locales)
 
-  protected 
-  def set_locale
-    # update session if passed
-    session[:locale] = params[:locale] if params[:locale]
+      if self.action_name == 'index' && params[:locale]
+        session[:locale] = locale_verifier.find_compatible_locale(params[:locale]) 
+      end
 
-    # set locale based on session or default
-    I18n.locale = session[:locale] || I18n.default_locale
-  end
+      if !session[:locale]
+        http_accept_language = locale_verifier.parse_accept_language_string(request.env['HTTP_ACCEPT_LANGUAGE'])
+        request_language = locale_verifier.find_compatible_locale(http_accept_language)
+        session[:locale] = request_language || I18n.default_locale
+      end
+
+      I18n.locale = session[:locale]
+    end
 end
