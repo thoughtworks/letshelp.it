@@ -1,9 +1,13 @@
 # coding: utf-8
 
-#transformed from http://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/pt-BR.yml
-
 {
   :en => {
+    :i18n => {
+        :language => {
+            :name => 'English'
+        },
+    },
+    #specific info for this app
     :forum => "Forum",
     :about => "About",
     :wrong_password => "Invalid password",
@@ -47,7 +51,7 @@
       :please_help => "Please, help ",
       :button => "Share in Twitter"
     },
-    #original file starts here
+    #transformed from http://github.com/svenfuchs/rails-i18n/
     :number => {
       :format => {
         :separator => ".",

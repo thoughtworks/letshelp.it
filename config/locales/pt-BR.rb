@@ -1,11 +1,13 @@
 # coding: utf-8
 
-#transformed from http://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/pt-BR.yml
-
 {
-  :pt => {
+  :'pt-BR' => {
+    :i18n => {
+        :language => {
+            :name => 'Português (Brasil)'
+        },
+    },
     #specific info for this app
-    #:wrong_mail_address => "E-mail inválido",
     :forum => "Fórum",
     :about => "Sobre",
     :wrong_password => "Senha inválida",
@@ -49,7 +51,7 @@
       :please_help => "Por favor ajude ",
       :button => "Compartilhe com Twitter"
     },
-    #original file starts here
+    #transformed from http://github.com/svenfuchs/rails-i18n/tree/master/rails/locale/pt-BR.yml
     :date => {
       :formats => {
           :default => "%d/%m/%Y", 
@@ -214,7 +216,7 @@
           :city => "Cidade",
           :country => "País",
           :needs => "Necessidades",
-          :announcer => "CADASTRADOR!!!!!!!!!!!!",
+          :announcer => "Anunciante",
           :password => "Senha",
           :email => "E-mail"
         }

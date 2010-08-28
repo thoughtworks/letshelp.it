@@ -48,9 +48,9 @@ class HomeControllerTest < ActionController::TestCase
   
   context "locale settings" do
 
-    should "have portuguese as default language" do
+    should "have portuguese (Brazil) as default language" do
       get :index
-      assert_equal :pt, I18n.locale
+      assert_equal :'pt-BR', I18n.locale
     end
 
     should "get language from the browser request" do
