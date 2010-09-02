@@ -21,7 +21,7 @@
     :enter_password => "Enter the password",
     :validate => "Validate",
     :organization => {
-      :register => "Register a organization",
+      :register => "Register an organization",
       :update => "Update %{organization}'s information",
       :success_created => "Organization created with success",
       :success_updated => "Organization updated with success"
