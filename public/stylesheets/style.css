@@ -101,10 +101,12 @@
 
 #organizations div.left {
 	float: left;
+	clear: left;
 }
 
 #organizations div.right {
 	float: right;
+	clear: right;
 }
 
 #search_query {
