@@ -15,9 +15,7 @@
     <div id="container">
 			
 			<div id="header">
-        <%= controller.action_name == "index" ?
-          '<div id="locale_menu"><form method="get">' + select_tag("locale", options_for_select(I18n.available_locales.collect{ |x| [I18n.find_locale_name(x), x]}, I18n.locale), { :onchange => "this.form.submit()"}) + '</form></div>' : ''
-        %>
+        <%= generate_locale_menu_html if controller.action_name == "index" %>
 			  <div id="registration">
 				  <%= link_to t("organization.register"), new_organization_path, :class => "link" %>
         </div>
