@@ -1,7 +1,7 @@
 <div id="organizations">
-  <% @organizations.each_with_index do |organization, i| %>
+  <% @organizations.each do |organization| %>
     <% link_to organization do %>
-      <div class="organization <%= i.even? ? 'left' : 'right'%>">
+      <div class="organization <%= cycle('left','right') %>">
         <h2><%=h organization.name %></h2>
         <h3><%=h organization.city %></h3>
         <p><%=h organization.needs %></p>
