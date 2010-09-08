@@ -38,7 +38,7 @@ public
       if(@organization.password == params[:password]) then
         format.js { render :partial => "organizations/form" , :locals => { :action => "Update" } }
       else
-        format.js { render :text => t("wrong_password"), :status => :failure }
+        format.js { render :text => t("wrong_password"), :status => :forbidden }
       end
     end
   end

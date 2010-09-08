@@ -115,13 +115,13 @@ class OrganizationsControllerTest < ActionController::TestCase
   end
 
   should "be able to edit organization when match password" do
-    get :ajax_edit, :id => organizations(:wwf).id, :password => organizations(:wwf).password
+    get :ajax_edit, :format => 'js', :id => organizations(:wwf).id, :password => organizations(:wwf).password
     assert_response :success
   end
   
   should "not be able to edit organization when password dont match" do
-    get :ajax_edit, :id => organizations(:wwf).id, :password => "wrong_pass"
-    assert :status => :failure
+    get :ajax_edit, :format => 'js', :id => organizations(:wwf).id, :password => "wrong_pass"
+    assert :status => :forbidden
   end
   
   private
