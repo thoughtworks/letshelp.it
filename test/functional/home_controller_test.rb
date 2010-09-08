@@ -13,13 +13,13 @@ class HomeControllerTest < ActionController::TestCase
 
     context "in portuguese" do
       setup do
-        session[:locale] = 'pt'
+        session[:locale] = 'pt-br'
         get :about
       end
       
       should respond_with :success
       should assign_to :tags
-      should render_template 'home/about_pt.erb'
+      should render_template 'home/about_pt-br.erb'
     end
 
     context "in english" do
@@ -41,7 +41,7 @@ class HomeControllerTest < ActionController::TestCase
       
       should respond_with :success
       should assign_to :tags
-      should render_template 'home/about_pt.erb'
+      should render_template 'home/about_pt-br.erb'
     end
     
   end
@@ -66,25 +66,31 @@ class HomeControllerTest < ActionController::TestCase
     end
 
     should "get locale from session" do
-      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt;p=0.5'  
+      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt-br;p=0.5'  
       session[:locale] = 'en'
       get :index
       assert_equal session[:locale].to_sym, I18n.locale
     end
 
     should "get locale from params" do
-      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt;p=0.5'
+      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt-br;p=0.5'
       locale = 'en'
       get :index, :locale => locale
       assert_equal locale.to_sym, I18n.locale
     end
 
     should "get locale from params if both params and session are set" do
-      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt;p=0.5'
-      session[:locale] = 'pt'
+      @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de,pt-br;p=0.5'
+      session[:locale] = 'pt-br'
       locale = 'en'
       get :index, :locale => locale
       assert_equal locale.to_sym, I18n.locale
+    end
+
+    should "use default locale if locale stored in session is invalid" do
+      session[:locale] = 'foo'
+      get :index
+      assert_equal I18n.default_locale, I18n.locale
     end
   end
 end

@@ -63,7 +63,6 @@ public
   # PUT /organizations/1
   # PUT /organizations/1.xml
   def update
-    #@organization = Organization.find(params[:id])
     params[:organization][:tag_ids] ||= []
 
     respond_to do |format|
@@ -79,7 +78,6 @@ public
   # DELETE /organizations/1
   # DELETE /organizations/1.xml
   def destroy
-    #@organization = Organization.find(params[:id])
     @organization.destroy
 
     respond_to do |format|

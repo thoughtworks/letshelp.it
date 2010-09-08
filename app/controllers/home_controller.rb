@@ -5,19 +5,12 @@ class HomeController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @organizations }
     end
   end
   
   def about
     respond_to do |format|
-      format.html {
-        if I18n.locale.to_s =~ /en/ then 
-          render 'about_en.erb'
-        else
-          render 'about_pt.erb'
-        end
-      }
+      format.html { render "about_#{I18n.locale.to_s.downcase}.erb" }
     end
   end
 
