@@ -64,3 +64,29 @@ santa_casa:
   password: 1
   email: a@a.a
   announcer: announcer
+  
+tamar:
+  id: 7
+  name: Projeto Tamar
+  name_slug: projeto-tamar
+  contact: lululu
+  city: Porto Alegre
+  city_slug: porto alegre
+  country: Brazil
+  needs: peixe
+  password: 1
+  email: a@a.a
+  announcer: announcer
+
+tamar:
+  id: 8
+  name: aacd
+  name_slug: aacd
+  contact: lululu
+  city: Porto Alegre
+  city_slug: porto alegre
+  country: Brazil
+  needs: tuto
+  password: 1
+  email: a@a.a
+  announcer: announcer

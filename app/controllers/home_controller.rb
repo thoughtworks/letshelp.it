@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-  	@organizations = Organization.all
+  	@organizations = Organization.get_random_list(6)
 
     respond_to do |format|
       format.html # index.html.erb

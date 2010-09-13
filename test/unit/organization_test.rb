@@ -56,4 +56,18 @@ class OrganizationTest < ActiveSupport::TestCase
     assert_equal "minha-organizacao", org.name_slug, "name slug is '#{org.name_slug}', but 'minha-organizacao' was expected"
   end
   
+  should "retrieve at most the parameter informed of organizations" do
+    orgs = Organization.get_random_list(2)
+    assert_operator orgs.count, :<=, 2
+    
+    orgs = Organization.get_random_list(3)
+    assert_operator orgs.count, :<=, 3
+
+    orgs = Organization.get_random_list(1)
+    assert_operator orgs.count, :<=, 1
+
+    orgs = Organization.get_random_list(6)
+    assert_operator orgs.count, :<=, 6
+  end
+  
 end

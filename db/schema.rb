@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20100819182551) do
     t.datetime "updated_at"
   end
 
+  add_index "organizations", ["id"], :name => "index_organizations_on_id"
+
   create_table "organizations_tags", :id => false, :force => true do |t|
     t.integer "organization_id"
     t.integer "tag_id"

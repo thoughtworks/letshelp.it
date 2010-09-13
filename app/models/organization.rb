@@ -1,4 +1,7 @@
 class Organization < ActiveRecord::Base
+
+  extend Random
+  
   has_friendly_id :name, :use_slug => true, :cache_column => 'name_slug', :approximate_ascii => true
 
 	validates_presence_of :name, :contact, :city, :country, :password,  :announcer, :email
@@ -22,6 +25,11 @@ class Organization < ActiveRecord::Base
   
   def self.slug_city(name)
     name.to_s.to_slug.approximate_ascii.to_s.downcase
+  end
+  
+  def self.get_random_list(limit)
+    organizations = Organization.all(:select => :id, :order => db_random, :limit => limit)
+    organizations.each { |u| u.reload}
   end
 
 end
