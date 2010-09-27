@@ -1,11 +1,13 @@
-<div id="organizations">
+<div class="wrapper featuredOrg">
   <% @organizations.each do |organization| %>
     <%= link_to organization do %>
-      <div class="organization <%= cycle('left','right') %>">
-        <h2><%= organization.name %></h2>
-        <h3><%= organization.city %></h3>
+      <div class="bucket <%= cycle('left','right') %>">
+        <h3><%= organization.name %></h3>
+        <h4><%= organization.city %></h4>
         <p><%= RedCloth.new(organization.needs).to_html.html_safe %></p>
+        <a class="more" href="#">+</a>
       </div>
     <% end %>
   <% end %>
+  <div class="clear"></div>
 </div>
