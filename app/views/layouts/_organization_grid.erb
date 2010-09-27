@@ -1,11 +1,18 @@
-<div id="organizations">
+<div class="wrapper featuredOrg">
   <% @organizations.each do |organization| %>
     <% link_to organization do %>
-      <div class="organization <%= cycle('left','right') %>">
-        <h2><%=h organization.name %></h2>
-        <h3><%=h organization.city %></h3>
+    <div class="bucket <%= cycle('left','right') %>">
+        <h3><%=h organization.name %></h3>
+        <h4><%=h organization.city %></h4>
         <p><%=h organization.needs %></p>
-      </div>
+        <a class="more" href="#">+</a>
+    </div>
     <% end %>
   <% end %>
+  <div class="clear"></div>
+</div>
+
+<div class="wrapper actions">
+	<a href="#">Share this idea!</a>
+	<a href="#">Register an Institution</a>	
 </div>

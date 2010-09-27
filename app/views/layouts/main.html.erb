@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-  "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -12,48 +11,51 @@
 
 </head>
 <body>
-    <div id="container">
-			
-			<div id="header">
-        <%= generate_locale_menu_html if controller.action_name == "index" %>
-			  <div id="registration">
-				  <%= link_to t("organization.register"), new_organization_path, :class => "link" %>
-        </div>
-				<div id="logo">
-					<h1><%= link_to t("title"), :root %></h1>
-				</div>
-			</div>
-			
-			<div id="subheader">
-				<div id="search_area">
-					<form id="search_form" name="search_form" method="get" action="/organizations/search">
-						<blockquote id="search_tags"><label><%= t("howto_help") %> </label>
-						<% @tags.each do |tag| %>
-							<label><input type="checkbox" value="<%=tag.id%>" name="tag_ids[]" <%= ( (params[:tag_ids].member? tag.id.to_s) ? "checked":"") if not params[:tag_ids].nil? %> /> <%= t("tag.#{tag.name}") %></label>
-						<% end %></blockquote>
-						<table align="center" id="search_table">
-							<tr>
-								<td><input id="search_query" name="q" type="text" value="<%= params[:q]%>" /></td>
-								<td><input id="search" type="submit" value="<%= t("find") %>" /></td>
-							</tr>
-							<tr>
-								<td><div id="search_message"><p><%= t("whereto_help") %></p></div></td>
-							</tr>
-						</table>
-					</form>
-				</div>
-			</div>
-			
-			<div id="content">
-				<div style="color: green" align="center"><%= flash[:notice] %></div>
-  			<%= yield %>
-			</div>
-			
-			<div id="footer">
-				<%= link_to t('about'), about_url  %> | <%= link_to 'Twitter: @letshelpit', 'http://www.twitter.com/letshelpit' %> | <%= link_to t('forum'), 'http://letshelpit.uservoice.com/forums/72267-general' %>
-			</div>
-
+    <div class="bg">
+		<%= image_tag("bg.jpg", :alt => "background") %>
+	</div>		
+    <%= generate_locale_menu_html if controller.action_name == "index" %>
+    <header>
+	    <div class="wrapper">
+			<h1 id="logo">
+				<%= link_to t("title"), :root %>
+				<span>An application helping people to find organizations who need help</span>
+			</h1>
+			<ul class="social">
+				<li class="forum"><%= link_to t('forum'), 'http://letshelpit.uservoice.com/forums/72267-general' %></li>
+				<li class="twitter"><%= link_to 'Twitter', 'http://www.twitter.com/letshelpit' %></li>
+				<li class="flickr"><a href="#">Flickr</a></li>
+			</ul>
+			<div class="clear"></div>
 		</div>
+	</header>
+	<section id="body">
+		<div class="wrapper helpWithAndFindOrg">
+			<h2><%= t("howto_help") %></h2>
+			<form id="search_form" name="search_form" method="get" action="/organizations/search">
+				<div id="search_tags" class="helpWith">
+					<% @tags.each do |tag| %>
+					<label>
+						<input type="checkbox" value="<%=tag.id%>" name="tag_ids[]" <%= ( (params[:tag_ids].member? tag.id.to_s) ? "checked":"") if not params[:tag_ids].nil? %> /> <%= t("tag.#{tag.name}") %>
+					</label>
+					<% end %>
+				</div>
+				<div class="find">
+					<input type="text" name="q" id="search_query" value="<%=params[:q]%>" class="cityOrOrg" placeholder="<%= t("whereto_help") %>" />
+					<input type="button" id="search" value="<%= t("find") %>" />
+				</div>
+			</form>
+		</div>
+
+		<div style="color: green" align="center"><%= flash[:notice] %></div>
+		<%= yield %>
+	</section>	
+	<footer>
+		<div class="wrapper">
+		<small class="letsHelpIt"><strong><%= link_to ('Let\' Help it'), about_url  %></strong> is a project idealized by <a href="#">TW-Brazil</a>.</small> <small class="free">No rights reserved. <a href="#">Free code</a>.</small>
+		<div class="clear"></div>
+		</div>
+	</footer>
 
   <%= javascript_include_tag 'uservoice' %>
   <%= javascript_include_tag 'analytics' %>
