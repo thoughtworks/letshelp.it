@@ -4,7 +4,7 @@
       <div class="organization <%= cycle('left','right') %>">
         <h2><%=h organization.name %></h2>
         <h3><%=h organization.city %></h3>
-        <p><%=h organization.needs %></p>
+        <p><%= RedCloth.new(organization.needs).to_html %></p>
       </div>
     <% end %>
   <% end %>
