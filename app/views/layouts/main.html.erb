@@ -2,16 +2,16 @@
   "http://www.w3.org/TR/html4/strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta name="author" content="ThoughtWorks" />
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= t "title" %></title>
-  <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Cantarell:regular,italic,bold' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag 'style' %>
-
-</head>
-<body>
+  <head>
+    <meta name="author" content="ThoughtWorks" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title><%= t "title" %></title>
+    <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cantarell:regular,italic,bold' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag 'jquery' %>
+  </head>
+  <body id="body" lang="<%= I18n.locale.to_s %>">
     <div id="container">
 			
 			<div id="header">
@@ -27,10 +27,12 @@
 			<div id="subheader">
 				<div id="search_area">
 					<form id="search_form" name="search_form" method="get" action="/organizations/search">
-						<blockquote id="search_tags"><label><%= t("howto_help") %> </label>
-						<% @tags.each do |tag| %>
-							<label><input type="checkbox" value="<%=tag.id%>" name="tag_ids[]" <%= ( (params[:tag_ids].member? tag.id.to_s) ? "checked":"") if not params[:tag_ids].nil? %> /> <%= t("tag.#{tag.name}") %></label>
-						<% end %></blockquote>
+						<blockquote id="search_tags">
+              <label><%= t("howto_help") %></label>
+						  <% @tags.each do |tag| %>
+  						  <label><input type="checkbox" value="<%=tag.id%>" name="tag_ids[]" <%= ( (params[:tag_ids].member? tag.id.to_s) ? "checked":"") if not params[:tag_ids].nil? %> /> <%= t("tag.#{tag.name}") %></label>
+						  <% end %>
+            </blockquote>
 						<table align="center" id="search_table">
 							<tr>
 								<td><input id="search_query" name="q" type="text" value="<%= params[:q]%>" /></td>
@@ -55,7 +57,7 @@
 
 		</div>
 
-  <%= javascript_include_tag 'uservoice' %>
-  <%= javascript_include_tag 'analytics' %>
+    <%= javascript_include_tag 'uservoice' %>
+    <%= javascript_include_tag 'analytics' %>
   </body>
 </html>
