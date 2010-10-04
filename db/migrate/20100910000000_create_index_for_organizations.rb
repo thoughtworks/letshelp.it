@@ -1,9 +1,9 @@
-class CreateIndexOrganization < ActiveRecord::Migration
+class CreateIndexForOrganizations < ActiveRecord::Migration
   def self.up
     add_index :organizations, :id
   end
 
   def self.down
-    drop_table :organizations
+    remove_index :organizations, :id
   end
 end
