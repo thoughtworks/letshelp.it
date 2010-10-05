@@ -13,6 +13,7 @@
     :wrong_password => "Invalid password",
     :no_organization_found => "No organization was found",
     :title => "Let's Help It!",
+    :subtitle => "An application helping people to find organizations who need help",
     :howto_help => "How can I help?",
     :contact_info => "E-mail, phone number, address, ...",
     :whereto_help => "Organization's city or name",

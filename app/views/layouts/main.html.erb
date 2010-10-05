@@ -14,18 +14,24 @@
     <div class="bg">
 		<%= image_tag("bg.jpg", :alt => "background") %>
 	</div>		
-    <%= generate_locale_menu_html if controller.action_name == "index" %>
+    
     <header>
 	    <div class="wrapper">
 			<h1 id="logo">
-				<%= link_to t("title"), :root %>
-				<span>An application helping people to find organizations who need help</span>
+				<a href="/"></a>
 			</h1>
-			<ul class="social">
-				<li class="forum"><%= link_to t('forum'), 'http://letshelpit.uservoice.com/forums/72267-general' %></li>
-				<li class="twitter"><%= link_to 'Twitter', 'http://www.twitter.com/letshelpit' %></li>
-				<li class="flickr"><a href="#">Flickr</a></li>
-			</ul>
+			<div class="locale">
+				<%= generate_locale_menu_html if controller.action_name == "index" %>
+			</div>
+			<nav class="social">
+			<div class="slogan"><%= t("subtitle") %></div>
+				<ul>
+					<li class="forum"><%= link_to t('forum'), 'http://letshelpit.uservoice.com/forums/72267-general' %></li>
+					<li class="twitter"><%= link_to 'Twitter', 'http://www.twitter.com/letshelpit' %></li>
+					<li class="flickr"><a href="#">Flickr</a></li>
+				</ul>
+				<div class="clear"></div>
+			</nav>
 			<div class="clear"></div>
 		</div>
 	</header>
@@ -51,7 +57,7 @@
 		<%= yield %>
 	</section>	
 	<footer>
-		<div class="wrapper">
+		<div class="wrapper featuredOrg">
 		<small class="letsHelpIt"><strong><%= link_to ('Let\' Help it'), about_url  %></strong> is a project idealized by <a href="#">TW-Brazil</a>.</small> <small class="free">No rights reserved. <a href="#">Free code</a>.</small>
 		<div class="clear"></div>
 		</div>
