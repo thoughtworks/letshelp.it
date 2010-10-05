@@ -13,6 +13,7 @@
     :wrong_password => "Senha inválida",
     :no_organization_found => "Não foi encontrada nenhuma organização",
     :title => "Let's Help It!",
+    :subtitle => "Uma aplicação ajudando pessoas a encontrar organizações que precisam de ajuda",
     :howto_help => "Como ajudar?",
     :contact_info => "E-mail, telefone, endereço, ...",
     :whereto_help => "Cidade ou nome da organização",

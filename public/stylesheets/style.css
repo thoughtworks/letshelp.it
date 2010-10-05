@@ -23,13 +23,18 @@ a, a:link, a:hover, a:visited {
   position: fixed;
   top: 0px;
   width: 100%;
+  height: 100%;
   z-index: -50;
 }
 
-header, #body {
+#body {
   width: 100%;
   margin-bottom: 20px;
   background: #4C9867;
+}
+
+.social {
+  width: auto;
 }
 
 .wrapper {
@@ -42,33 +47,65 @@ header, #body {
   clear: both;
 }
 
-header, .helpWithAndFindOrg, .bucket, .actions a {
+.helpWithAndFindOrg, .bucket, .actions a {
   box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
 /* header */
 header .wrapper h1#logo {
+  background: url(/images/logo.png) no-repeat center left;
   float: left;
-  font-size: 2.6em;
+  font-size: 2em;
+  height: 85px;
+  padding-left: 200px;
+  padding-top: 75px;
 }
 
-header .wrapper h1#logo span {
-  font-style: italic;
-  font-weight: normal;
+header .wrapper h1#logo a {
   display: block;
-  font-size: 0.42em;
-  margin-top: 5px;
 }
 
-header .wrapper ul.social {
+header .wrapper .locale {
   float: right;
 }
 
-header .wrapper ul.social li {
+header div.slogan {
+  max-width: 710px;
+  font-style: italic;
+  background: rgba(51,51,51,0.7);
+  -webkit-border-radius: 10px;
+  padding: 10px;
+  font-weight: normal;
+  font-size: 2em;
+}
+
+header .social {
+  float: right;
+  margin-top: 50px;
+}
+
+header .social ul {
+  float: right;
+}
+
+header .social li {
   float: left;
   padding: 0 0 0 20px;
+}
+
+header .social li a {
+  color: #333 !important;
+}
+
+header .social li a:hover {
+  border-bottom: #555 dotted 1px;
+  color: #555 !important;
+}
+
+.forum, .twitter, .flickr {
+  padding-left: 20px;
 }
 
 /* #body */
@@ -77,16 +114,22 @@ header .wrapper ul.social li {
 }
 
 #body .wrapper.helpWithAndFindOrg {
-  background-color: rgba(116, 85, 125, 0.8);
+  background-color: #74557F;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
 
-#body .wrapper.helpWithAndFindOrg h2 {
+#body .wrapper.helpWithAndFindOrg h2, h3 {
   font-size: 3.1em;
+  font-family: "Harabara", Trebuchet MS, Arial, sans-serif;
+  letter-spacing: 0.15em;
   margin-bottom: 10px;
   text-shadow: 1px 1px 2px #333;
+}
+
+h3 {
+  font-size: 2em;
 }
 
 /* form */
@@ -134,19 +177,29 @@ input#search {
 /* featuredOrg */
 
 .featuredOrg .bucket {
-  background: #684F39;
+  background: #EDEDED;
+  color: #333;
   width: 280px;
   float: left;
   margin: 0 20px 20px 0;
   padding: 10px;
 }
 
+.featuredOrg .bucket h3 {
+  color: #FFF;
+}
+
 .featuredOrg .bucket.last {
   margin: 0;
 }
 
+.featuredOrg .bucket a {
+  color: #333;
+}
+
 .featuredOrg .bucket a.more {
-  background: #A5815F;
+  color: #F9F9F9;
+  background: #333;
   padding: 5px 10px;
   font-size: 1.5em;
   float: right;
@@ -154,13 +207,13 @@ input#search {
 }
 
 .featuredOrg .bucket a.more:hover {
-  background: #B49578;
+  background: #555;
 }
 
 /* actions */
 
 .actions a {
-  background: #684F39;
+  background: #74557F;
   padding: 5px 10px;
   float: right;
   margin-left: 20px;
@@ -168,7 +221,7 @@ input#search {
 }
 
 .actions a:hover {
-  background: #A5815F;
+  background: #7f5d8b;
 }
 
 /* footer */
