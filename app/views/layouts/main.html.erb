@@ -8,9 +8,11 @@
     <link href='http://fonts.googleapis.com/css?family=Cantarell:regular,italic,bold' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'style' %>
     <%= javascript_include_tag 'jquery' %>
+    <!--[if lte IE 8]>
+      <script src="/javascripts/html5.js"></script>
+    <![endif]-->
   </head>
   <body id="body_tag" lang="<%= I18n.locale.to_s %>">
-
     <div class="bg">
       <%= image_tag("bg.jpg", :alt => "background") %>
     </div>    
