@@ -48,11 +48,12 @@
             <% end %>
           </div>
           <div class="find">
-            <input id="search_query" name="q" type="text" value="<%= params[:q]%>" class="cityOrOrg" placeholder="<%= t('whereto_help') %>" />
+            <input id="search_query" name="q" type="text" class="cityOrOrg" placeholder="<%= t('whereto_help') %>"
+              value="<%= if params[:q].nil? then t('whereto_help') else params[:q] end %>"
+              onfocus="if (this.value == '<%= escape_javascript(t('whereto_help')) %>') this.value = '';"
+              onblur="if (this.value == '') this.value = '<%= escape_javascript(t('whereto_help')) %>';"
+            />
             <input id="search" type="submit" value="<%= t('find') %>" />
-          </div>
-          <div id="search_help_message">
-            <p><%= t("whereto_help") %></p>
           </div>
         </form>
       </div>
