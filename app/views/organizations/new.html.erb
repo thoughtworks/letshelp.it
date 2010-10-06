@@ -1,3 +1,7 @@
-<h1><%=t("organization.register")%></h1>
-
-<%= render :partial => 'organizations/form', :locals => { :action => 'Create' } %>
+<div class="wrapper">
+	<div class="register">
+		<h3><%=t("organization.register")%></h3>
+		<%= render :partial => 'organizations/form', :locals => { :action => 'Create' } %>
+	</div>
+	<div class="clear"></div>
+</div>

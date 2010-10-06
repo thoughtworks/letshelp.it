@@ -141,10 +141,23 @@ h3 {
 
 label {
 	font-size: 1.5em;
+	display: block;
 }
 
-input {
+input, textarea {
 	border: none;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+input#organization_submit {
+	background: #333;
+	color: #F9F9F9;
+}
+
+input#organization_submit:hover {
+	background: #777;
+	cursor: pointer;
 }
 
 .helpWith input {
@@ -172,7 +185,9 @@ input#search {
 
 /* featuredOrg */
 
-.featuredOrg .bucket {
+.featuredOrg .bucket, 
+.orgDescription,
+.register {
 	background: #EDEDED;
 	color: #333;
 	width: 280px;
@@ -241,3 +256,28 @@ small.letsHelpIt strong {
 small.free {
 	float: right;
 }
+
+
+
+/* Internal pages */
+
+.orgDescription,
+.register {
+	width: 920px;	
+}
+
+.orgDescription a.edit {
+	color: red;
+} 
+.orgDescription a.edit:hover {
+	border-bottom: 1px dotted red;	
+}
+.orgDescription a.share {
+	color: #3CF;
+}
+
+.orgDescription a.share:hover {
+	background: #3CF;
+	color: white;
+}
+
