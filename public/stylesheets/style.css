@@ -122,7 +122,7 @@ header .social li a:hover {
 
 #body .wrapper.helpWithAndFindOrg h2, h3 {
   font-size: 3.1em;
-  font-family: "Harabara", Trebuchet MS, Arial, sans-serif;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
   letter-spacing: 0.15em;
   margin-bottom: 10px;
   text-shadow: 1px 1px 2px #333;
@@ -139,10 +139,23 @@ h3 {
 
 label {
   font-size: 1.5em;
+  display: block;
 }
 
-input {
+input, textarea {
   border: none;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+input#organization_submit {
+  background: #333;
+  color: #F9F9F9;
+}
+
+input#organization_submit:hover {
+  background: #777;
+  cursor: pointer;
 }
 
 .helpWith input {
@@ -176,7 +189,9 @@ input#search {
 
 /* featuredOrg */
 
-.featuredOrg .bucket {
+.featuredOrg .bucket, 
+.orgDescription,
+.register {
   background: #EDEDED;
   color: #333;
   width: 280px;
@@ -244,4 +259,28 @@ small.letsHelpIt strong {
 
 small.free {
   float: right;
+}
+
+
+
+/* Internal pages */
+
+.orgDescription,
+.register {
+  width: 920px;  
+}
+
+.orgDescription a.edit {
+  color: red;
+} 
+.orgDescription a.edit:hover {
+  border-bottom: 1px dotted red;  
+}
+.orgDescription a.share {
+  color: #3CF;
+}
+
+.orgDescription a.share:hover {
+  background: #3CF;
+  color: white;
 }
