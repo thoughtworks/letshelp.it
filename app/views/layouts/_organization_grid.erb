@@ -5,7 +5,6 @@
         <h3><%= organization.name %></h3>
         <h4><%= organization.city %></h4>
         <p><%= RedCloth.new(organization.needs).to_html.html_safe %></p>
-        <a class="more" href="#">+</a>
       </div>
     <% end %>
   <% end %>
