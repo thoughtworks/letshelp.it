@@ -1,20 +1,23 @@
-<%= javascript_include_tag 'jquery' %>
-
-<h1><%=t("organization.update", :organization => @organization.name)%>:</h1>
-
-<div id="edit_form">
-
-  <p><%=t("enter_password")%>:</p>
-  <p id="error_msg" style="color: red"></p>
-
-  <form id="submit_pass">
-    <input type="hidden" id="id_field" value="<%=@organization.id %>" />
-    <input type="password" id="pass_field" />
-    <input type="submit" value="<%=t("validate")%>" /> 
-  </form>
-
-</div>
-
+<div class="wrapper">
+	<div class="editOrg">
+		<%= javascript_include_tag 'jquery' %>
+		
+		<h3><%=t("organization.update", :organization => @organization.name)%></h3>
+		
+		<div id="edit_form">
+			<div class="password">
+				<em><%=t("enter_password")%>:</em>
+				<p id="error_msg" style="color: red"></p>
+				
+				<form id="submit_pass">
+					<input type="hidden" id="id_field" value="<%=@organization.id %>" />
+					<input type="password" id="pass_field" />
+					<input type="submit" value="<%=t("validate")%>" class="passSubmit" /> 
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
 <script>
   $('#submit_pass').submit(function() {
     $.ajax({ url : "/organizations/ajax_edit", 
@@ -29,4 +32,4 @@
     return false;
   });
 </script>
-
+</div>

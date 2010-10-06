@@ -3,9 +3,8 @@
     <% link_to organization do %>
     <div class="bucket <%= cycle('left','right') %>">
         <h3><%=h organization.name %></h3>
-        <h4><%=h organization.city %></h4>
+        <h4><%=h organization.city %> / <%=h organization.country %></h4>
         <p><%=h organization.needs %></p>
-        <a class="more" href="#">+</a>
     </div>
     <% end %>
   <% end %>

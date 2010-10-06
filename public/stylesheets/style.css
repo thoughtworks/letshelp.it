@@ -1,4 +1,4 @@
-@font-face { font-family: Harabara; src: url('font/Harabara.ttf'); } 
+@font-face { font-family: Harabara; src: url('fonts/Harabara.ttf'); } 
 
 html, body, * {
 	list-style: none;
@@ -57,16 +57,17 @@ a, a:link, a:hover, a:visited {
 
 /* header */
 header .wrapper h1#logo {
-	background: url(images/logo.png) no-repeat center left;
+	width: 195px; 
+	height: 160px;
+	position: relative;
 	float: left;
-	font-size: 2em;
-	height: 85px;
-	padding-left: 200px;
-	padding-top: 75px;
 }
 
 header .wrapper h1#logo a {
-	display: block;
+	background: url(images/logo.png);
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 header .wrapper .locale {
@@ -80,12 +81,13 @@ header div.slogan {
 	-webkit-border-radius: 10px;
 	padding: 10px;
 	font-weight: normal;
-	font-size: 2em;
+	font-size: 1.95em;
+	line-height: 1.3em;
 }
 
 header .social {
 	float: right;
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 header .social ul {
@@ -98,12 +100,13 @@ header .social li {
 }
 
 header .social li a {
-	color: #333 !important;
+	color: #FFF !important;
+	text-shadow: #000 1px 1px 2px;
 }
 
 header .social li a:hover {
-	border-bottom: #555 dotted 1px;
-	color: #555 !important;
+	border-bottom: #FFF dotted 1px;
+	color: #FFF !important;
 }
 
 .forum, .twitter, .flickr {
@@ -127,11 +130,23 @@ header .social li a:hover {
 	font-family: "Harabara", Trebuchet MS, Arial, sans-serif;
 	letter-spacing: 0.15em;
 	margin-bottom: 10px;
-	text-shadow: 1px 1px 2px #333;
+	text-shadow: 1px 1px 1px #000;
+}
+
+h2.successfulAdded {
+	color: #D64765;
 }
 
 h3 {
-	font-size: 2em;
+	font-size: 2.5em;
+	color: #555;
+}
+
+h4 {
+	margin-bottom: 20px;
+	font-style: italic;
+	background: url(../images/arrow.gif) no-repeat left center;
+	padding-left: 15px;
 }
 
 /* form */
@@ -139,25 +154,9 @@ h3 {
 	margin-bottom: 20px;
 }
 
-label {
-	font-size: 1.5em;
-	display: block;
-}
-
-input, textarea {
-	border: none;
-	padding: 5px;
-	margin-bottom: 10px;
-}
-
-input#organization_submit {
-	background: #333;
-	color: #F9F9F9;
-}
-
-input#organization_submit:hover {
-	background: #777;
-	cursor: pointer;
+.helpWith label, #list_tags label {
+	float: left;
+	margin-right: 20px;
 }
 
 .helpWith input {
@@ -183,11 +182,17 @@ input#search {
 	width: 140px;
 }
 
+input#search:hover {
+	cursor: pointer;
+	background: #BBF968;
+}
+
 /* featuredOrg */
 
 .featuredOrg .bucket, 
 .orgDescription,
-.register {
+.register,
+.editOrg {
 	background: #EDEDED;
 	color: #333;
 	width: 280px;
@@ -197,7 +202,13 @@ input#search {
 }
 
 .featuredOrg .bucket h3 {
-	color: #FFF;
+	background: none;
+}
+
+.featuredOrg .bucket h4 {
+	font-size: 1.3em;
+	padding: 0;
+	background: none;
 }
 
 .featuredOrg .bucket.last {
@@ -206,19 +217,6 @@ input#search {
 
 .featuredOrg .bucket a {
 	color: #333;
-}
-
-.featuredOrg .bucket a.more {
-	color: #F9F9F9;
-	background: #333;
-	padding: 5px 10px;
-	font-size: 1.5em;
-	float: right;
-	margin: 0 -10px -10px 0;
-}
-
-.featuredOrg .bucket a.more:hover {
-	background: #555;
 }
 
 /* actions */
@@ -262,8 +260,29 @@ small.free {
 /* Internal pages */
 
 .orgDescription,
-.register {
-	width: 920px;	
+.register,
+.editOrg {
+	width: 900px;	
+	position: relative;
+}
+
+.register h3, 
+.orgDescription h3,
+.editOrg h3 {
+	margin: -20px -20px 40px -20px;
+	padding: 20px;
+	background: #F5F5F5;
+	border-bottom: 3px solid #F9F9F9;	
+}
+
+.orgDescription h3 div {
+	background: url(../images/arrow.gif) no-repeat left center;
+	padding-left: 15px;
+	font-family: 'Trebuchet MS';
+	font-size: 0.5em;
+	margin-top: 10px;
+	text-shadow: none;
+	color: #333;
 }
 
 .orgDescription a.edit {
@@ -279,5 +298,121 @@ small.free {
 .orgDescription a.share:hover {
 	background: #3CF;
 	color: white;
+}
+
+.orgDescription, .register, .editOrg {
+	padding: 20px;
+}
+
+/*form */
+
+label {
+	font-size: 1.25em;
+	display: block;
+	margin-bottom: 5px;
+}
+
+#list_tags label {
+	font-size: 1em;
+}
+
+input, textarea {
+	border: none;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+textarea {
+	margin-bottom: 0;
+	width: 400px;
+	height: 200px;
+}
+.textarea {
+	margin-bottom: -5px;
+}
+
+.smoothText {
+	font-size: 1em;
+	font-style: italic;
+}
+
+.orgInfo, 
+.announcerInfo {
+	width: 420px;
+}
+
+.orgInfo {
+	float: left;
+	border-right: 2px dotted #F9F9F9;
+	padding-right: 20px;
+}
+
+.announcerInfo {
+	float: right;
+	padding-left: 20px;
+}
+
+.btnSubmit {
+	clear: both;
+}
+
+input#organization_submit {
+	background: #333;
+	color: #F9F9F9;
+	padding: 5px 40px;
+	bottom: 10px;
+	right: 20px;
+	position: absolute;
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+
+input#organization_submit:hover {
+	background: #777;
+	cursor: pointer;
+}
+
+.waysOfContact, .tags {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.waysOfContact strong, 
+.tags strong,
+.needs strong {
+	font-size: 1.2em;
+}
+
+.needs {
+	clear: both;
+}
+
+.tools {
+	margin-top: 20px;
+}
+
+.password {
+	margin: 0 auto;
+	padding: 20px;
+	width: 230px;
+	border: 1px #666 dotted;
+	background: #FFF;
+}
+
+#pass_field {
+	background: #777;
+	color: #FFF;
+}
+
+.passSubmit {
+	background: #333;
+	color: #F9F9F9;
+	margin-left: 5px;
+}
+
+.passSubmit:hover {
+	background: #777;
+	cursor: pointer;
 }
 

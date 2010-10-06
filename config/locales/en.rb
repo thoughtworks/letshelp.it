@@ -18,6 +18,7 @@
     :contact_info => "E-mail, phone number, address, ...",
     :whereto_help => "Organization's city or name",
     :find => "Find!",
+    :org_info => "Information about the organization",
     :announcer_info => "Information about the person that is registering this organization",
     :enter_password => "Enter the password",
     :validate => "Validate",

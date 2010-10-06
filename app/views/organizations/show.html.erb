@@ -2,37 +2,27 @@
 	<div class="orgDescription">
 		<h3>
 			<%=h @organization.name %>
+			<div><%=h @organization.city %> / <%=h @organization.country %></div>
 		</h3>
-	
-		<p>
-			<b><%=t("org_form.contact")%>:</b>
-			<%=h @organization.contact %>
-		</p>
-	
-		<p>
-			<b><%=t("org_form.city")%>:</b>
-			<%=h @organization.city %>
-		</p>
-	
-		<p>
-			<b><%=t("org_form.country")%>:</b>
-			<%=h @organization.country %>
-		</p>
-	
-		<p>
-			<b><%=t("org_form.tags")%>:</b>
-	    <%= @organization.tags.inject([]){|a,tag| a<<t("tag.#{tag.name}")}.join(', ')  %>
-		</p>
-	
-		<p>
-			<b><%=t("org_form.needs")%>:</b>
+		
+		<div class="waysOfContact">
+			<strong><%=t("org_form.contact")%>:</strong> <%=h @organization.contact %>
+		</div>
+		<div class="tags">
+			<strong><%=t("org_form.tags")%>:</strong> 
+			<%= @organization.tags.inject([]){|a,tag| a<<t("tag.#{tag.name}")}.join(', ')  %>
+		</div>
+		
+		<div class="needs">
+			<strong><%=t("org_form.needs")%>:</strong>
+			<br />
 			<%= RedCloth.new(@organization.needs).to_html %>
-		</p>
-	
-	  <br />  
-	  <p>
-		  <%= link_to t('org_form.edit_button'), edit_organization_path(@organization), :class => 'link edit'  %> | <%= link_to t('twitter_share.button'), compose_twitter_share_url(), :popup => true, :class => 'link share'  %>
+		</div>
+
+		<div class="tools">
+			<%= link_to t('org_form.edit_button'), edit_organization_path(@organization), :class => 'link edit'  %> | <%= link_to t('twitter_share.button'), compose_twitter_share_url(), :popup => true, :class => 'link share'  %>
 		</p>
 	</div>
 	<div class="clear"></div>
 </div>
+<div class="clear"></div>
