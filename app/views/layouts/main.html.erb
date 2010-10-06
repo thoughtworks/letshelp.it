@@ -47,7 +47,16 @@
 					<% end %>
 				</div>
 				<div class="find">
-					<input type="text" name="q" id="search_query" value="<%=params[:q]%>" class="cityOrOrg" placeholder="<%= t("whereto_help") %>" />
+					<%
+						
+					%>
+					<input type="text" name="q" id="search_query" 
+						placeholder="<%= t("whereto_help") %>" 
+						class="cityOrOrg" 
+						
+						value="<%= t("whereto_help") %>"
+						onfocus="if (this.value == '<%= t("whereto_help").gsub "'", "\\\\'" %>') this.value = '';" 
+						onblur="if (this.value == '') this.value = '<%= t("whereto_help").gsub "'", "\\\\'" %>';" />
 					<input type="submit" id="search" value="<%= t("find") %>" />
 				</div>
 			</form>
