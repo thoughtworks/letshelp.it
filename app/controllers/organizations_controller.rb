@@ -89,7 +89,7 @@ public
     tag_ids = params[:tag_ids]
     name_slug = "%#{Organization.slug_name(params[:q])}%"
     city_slug = "%#{Organization.slug_city(params[:q])}%"
-    @organizations = Organization.find(:all, :conditions => ["name_slug like ? OR city_slug like ?", name_slug , city_slug ] )
+    @organizations = Organization.all(:conditions => ["name_slug like ? OR city_slug like ?", name_slug , city_slug ] )
     @organizations &= Tag.find(tag_ids).inject([]) { |a,t| a + t.organizations } if tag_ids && !tag_ids.empty?
     
     respond_to do |format|

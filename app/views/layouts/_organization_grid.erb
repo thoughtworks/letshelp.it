@@ -1,10 +1,10 @@
 <div id="organizations">
   <% @organizations.each do |organization| %>
-    <% link_to organization do %>
+    <%= link_to organization do %>
       <div class="organization <%= cycle('left','right') %>">
-        <h2><%=h organization.name %></h2>
-        <h3><%=h organization.city %></h3>
-        <p><%= RedCloth.new(organization.needs).to_html %></p>
+        <h2><%= organization.name %></h2>
+        <h3><%= organization.city %></h3>
+        <p><%= RedCloth.new(organization.needs).to_html.html_safe %></p>
       </div>
     <% end %>
   <% end %>

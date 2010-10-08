@@ -1,21 +1,21 @@
 	<p>
 		<b><%=t("org_form.name")%>:</b>
-		<%=h @organization.name %>
+		<%= @organization.name %>
 	</p>
 
 	<p>
 		<b><%=t("org_form.contact")%>:</b>
-		<%=h @organization.contact %>
+		<%= @organization.contact %>
 	</p>
 
 	<p>
 		<b><%=t("org_form.city")%>:</b>
-		<%=h @organization.city %>
+		<%= @organization.city %>
 	</p>
 
 	<p>
 		<b><%=t("org_form.country")%>:</b>
-		<%=h @organization.country %>
+		<%= @organization.country %>
 	</p>
 
 	<p>
@@ -25,11 +25,11 @@
 
 	<p>
 		<b><%=t("org_form.needs")%>:</b>
-		<%= RedCloth.new(@organization.needs).to_html %>
+		<%= RedCloth.new(@organization.needs).to_html.html_safe %>
 	</p>
 
   <br />  
   <p>
 	  <%= link_to t('org_form.edit_button'), edit_organization_path(@organization), :class => 'link'  %>
-	  <%= link_to t('twitter_share.button'), compose_twitter_share_url(), :popup => true, :class => 'link'  %>
+	  <%= link_to t('twitter_share.button'), compose_twitter_share_url(), :class => 'link'  %>
 	</p>
