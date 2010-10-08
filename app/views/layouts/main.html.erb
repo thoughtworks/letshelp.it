@@ -14,7 +14,9 @@
     <div id="container">
     
       <div id="header">
-        <%= generate_locale_menu_html.html_safe if controller.action_name == "index" %>
+        <div id="locale_menu">
+          <%= generate_locale_menu_html.html_safe if controller.action_name == "index" %>
+        </div>
         <div id="registration">
           <%= link_to t("organization.register"), new_organization_path, :class => "link" %>
         </div>
