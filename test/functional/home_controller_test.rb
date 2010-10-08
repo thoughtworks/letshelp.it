@@ -19,7 +19,7 @@ class HomeControllerTest < ActionController::TestCase
       
       should respond_with :success
       should assign_to :tags
-      should render_template 'home/about_pt-br.erb'
+      should render_template 'home/about_pt-br'
     end
 
     context "in english" do
@@ -30,7 +30,7 @@ class HomeControllerTest < ActionController::TestCase
       
       should respond_with :success
       should assign_to :tags
-      should render_template 'home/about_en.erb'
+      should render_template 'home/about_en'
     end
 
     context "in any other language" do
@@ -41,7 +41,7 @@ class HomeControllerTest < ActionController::TestCase
       
       should respond_with :success
       should assign_to :tags
-      should render_template 'home/about_pt-br.erb'
+      should render_template 'home/about_pt-br'
     end
     
   end
