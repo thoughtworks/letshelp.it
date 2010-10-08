@@ -1,35 +1,35 @@
-	<p>
-		<b><%=t("org_form.name")%>:</b>
-		<%= @organization.name %>
-	</p>
+  <p>
+    <b><%=t("org_form.name")%>:</b>
+    <%= @organization.name %>
+  </p>
 
-	<p>
-		<b><%=t("org_form.contact")%>:</b>
-		<%= @organization.contact %>
-	</p>
+  <p>
+    <b><%=t("org_form.contact")%>:</b>
+    <%= @organization.contact %>
+  </p>
 
-	<p>
-		<b><%=t("org_form.city")%>:</b>
-		<%= @organization.city %>
-	</p>
+  <p>
+    <b><%=t("org_form.city")%>:</b>
+    <%= @organization.city %>
+  </p>
 
-	<p>
-		<b><%=t("org_form.country")%>:</b>
-		<%= @organization.country %>
-	</p>
+  <p>
+    <b><%=t("org_form.country")%>:</b>
+    <%= @organization.country %>
+  </p>
 
-	<p>
-		<b><%=t("org_form.tags")%>:</b>
+  <p>
+    <b><%=t("org_form.tags")%>:</b>
     <%= @organization.tags.inject([]){|a,tag| a<<t("tag.#{tag.name}")}.join(', ')  %>
-	</p>
+  </p>
 
-	<p>
-		<b><%=t("org_form.needs")%>:</b>
-		<%= RedCloth.new(@organization.needs).to_html.html_safe %>
-	</p>
+  <p>
+    <b><%=t("org_form.needs")%>:</b>
+    <%= RedCloth.new(@organization.needs).to_html.html_safe %>
+  </p>
 
   <br />  
   <p>
-	  <%= link_to t('org_form.edit_button'), edit_organization_path(@organization), :class => 'link'  %>
-	  <%= link_to t('twitter_share.button'), compose_twitter_share_url(), :class => 'link'  %>
-	</p>
+    <%= link_to t('org_form.edit_button'), edit_organization_path(@organization), :class => 'link'  %>
+    <%= link_to t('twitter_share.button'), compose_twitter_share_url(), :class => 'link'  %>
+  </p>

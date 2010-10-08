@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   protected
     def find_all_tags
-    	@tags = Tag.all
+      @tags = Tag.all
     end
 
     def set_locale
