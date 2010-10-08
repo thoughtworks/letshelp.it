@@ -9,7 +9,7 @@ var uservoiceOptions = {
   background_color:'#331200', 
   text_color: 'white',
   hover_color: '#553422',
-  lang: $('#body').attr('lang').replace('-','_')
+  lang: $('#body_tag').attr('lang').replace('-','_')
 };
 
 function _loadUserVoice() {
