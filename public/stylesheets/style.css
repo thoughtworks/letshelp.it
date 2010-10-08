@@ -15,8 +15,22 @@ body {
   line-height: 1.8em;
 }
 
+p, br {
+  margin-bottom: 10px;
+}
+
+b, strong {
+  color: #000;
+  font-size: 1.1em;
+}
+
 a, a:link, a:hover, a:visited {
-  color: #FFF;
+  color: #F4964C;
+  font-size: 1.2em;
+}
+
+a:hover {
+  background: #F8F8F8;
 }
 
 .bg img {
@@ -33,6 +47,14 @@ a, a:link, a:hover, a:visited {
   width: 100%;
   margin-bottom: 20px;
   background: #4C9867;
+}
+
+.right {
+  margin-right: 0 !important;  
+}
+
+.left {
+  margin-left: 0 !important;
 }
 
 .social {
@@ -56,6 +78,15 @@ a, a:link, a:hover, a:visited {
 }
 
 /* header */
+
+header nav {
+  background: #333;
+}
+
+header nav .wrapper {
+  padding: 5px;
+}
+
 header .wrapper h1#logo {
   width: 195px; 
   height: 160px;
@@ -71,44 +102,42 @@ header .wrapper h1#logo a {
 }
 
 header .wrapper .locale {
-  float: right;
+  float: left;
 }
 
 header div.slogan {
   max-width: 710px;
   font-style: italic;
   background: rgb(61,61,61);
-  background: rgba(51,51,51,0.7);
+    background: rgba(51,51,51,0.7);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   padding: 10px;
   font-weight: normal;
   font-size: 1.95em;
   line-height: 1.3em;
-}
-
-header .social {
   float: right;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
-header .social ul {
+header nav ul {
   float: right;
 }
 
-header .social li {
+header nav li {
   float: left;
   padding: 0 0 0 20px;
 }
 
-header .social li a {
+header nav li a {
   color: #FFF !important;
   text-shadow: #000 1px 1px 2px;
 }
 
-header .social li a:hover {
+header nav li a:hover {
   border-bottom: #FFF dotted 1px;
   color: #FFF !important;
+  background: none;
 }
 
 .forum, .twitter, .flickr {
@@ -129,14 +158,23 @@ header .social li a:hover {
 
 #body .wrapper.helpWithAndFindOrg h2, h3 {
   font-size: 3.1em;
+  line-height: 1em;
   font-family: "Harabara", Trebuchet MS, Arial, sans-serif;
   letter-spacing: 0.15em;
   margin-bottom: 10px;
   text-shadow: 1px 1px 1px #000;
 }
 
-h2.successfulAdded {
-  color: #D64765;
+h4.successfulUpdated {
+  color: #356E75;
+  font-size: 1.5em;
+  font-style: none;
+  background: #7DE78D;
+  margin: 20px auto 0px;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  width: 500px;
 }
 
 h3 {
@@ -201,13 +239,18 @@ input#search:hover {
 .featuredOrg .bucket, 
 .orgDescription,
 .register,
-.editOrg {
+.editOrg,
+.aboutUs {
   background: #EDEDED;
   color: #333;
   width: 280px;
   float: left;
   margin: 0 20px 20px 0;
   padding: 10px;
+}
+
+.featuredOrg .bucket {
+  height: 320px;
 }
 
 .featuredOrg .bucket h3 {
@@ -231,6 +274,7 @@ input#search:hover {
 /* actions */
 
 .actions a {
+  color: #FFF;
   background: #74557F;
   padding: 5px 10px;
   float: right;
@@ -248,8 +292,13 @@ footer {
   margin-top: 40px;
 }
 
-footer .wrappper {
-  
+footer a {
+  color: #FFF !important;
+}
+
+footer a:hover {
+  background: none;
+  font-weight: bold;
 }
 
 small.letsHelpIt {
@@ -270,14 +319,17 @@ small.free {
 
 .orgDescription,
 .register,
-.editOrg {
+.editOrg,
+.aboutUs {
   width: 900px;  
   position: relative;
+  padding: 20px;
 }
 
 .register h3, 
 .orgDescription h3,
-.editOrg h3 {
+.editOrg h3,
+.aboutUs h3 {
   margin: -20px -20px 40px -20px;
   padding: 20px;
   background: #F5F5F5;
@@ -307,10 +359,6 @@ small.free {
 .orgDescription a.share:hover {
   background: #3CF;
   color: white;
-}
-
-.orgDescription, .register, .editOrg {
-  padding: 20px;
 }
 
 /*form */

@@ -1,10 +1,10 @@
 <div class="wrapper featuredOrg">
   <% @organizations.each do |organization| %>
     <%= link_to organization do %>
-      <div class="bucket <%= cycle('left','right') %>">
+      <div class="bucket <%= cycle('left','normal','right') %>">
         <h3><%= organization.name %></h3>
-        <h4><%= organization.city %></h4>
-        <p><%= RedCloth.new(organization.needs).to_html.html_safe %></p>
+        <h4><%= organization.city %> / <%= organization.country %></h4>
+        <p><%= RedCloth.new(truncate(organization.needs, :length => 340)).to_html.html_safe %></p>
       </div>
     <% end %>
   <% end %>

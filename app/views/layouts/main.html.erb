@@ -18,22 +18,25 @@
     </div>    
 
     <header>
-      <div class="wrapper">
-        <h1 id="logo"><a href="/"></a></h1>
-        <div class="locale">
-          <%= generate_locale_menu_html.html_safe if controller.action_name == "index" %>
-        </div>
-        <nav class="social">
-          <div class="slogan">
-            <%= t("subtitle") %>
-          </div>
-          <ul>          
+      <nav>
+        <div class="wrapper">
+          <ul>
+            <li><%= link_to 'Home', :controller => "home", :action => "index" %></li>
+            <li><%= link_to t('about'), about_url %></li>
             <li class="forum"><%= link_to t('forum'), "http://letshelpit.uservoice.com/forums/72267-general?lang=#{I18n.locale.to_s.gsub('-', '_')}" %></li>
-            <li class="twitter"><%= link_to 'Twitter', "http://www.twitter.com/letshelpit" %></li>
+            <li class="twitter"><%= link_to 'Twitter', 'http://www.twitter.com/letshelpit' %></li>
             <li class="flickr"><%= link_to 'Flickr', "http://www.flickr.com" %></li>
           </ul>
+          <div class="locale">
+            <%= generate_locale_menu_html.html_safe if controller.action_name == "index" %>
+          </div>
           <div class="clear"></div>
-        </nav>
+        </div>
+      </nav>
+      
+      <div class="wrapper">
+        <h1 id="logo"><a href="/"></a></h1>
+        <div class="slogan"><%= t("subtitle") %></div>
         <div class="clear"></div>
       </div>
     </header>
@@ -60,7 +63,7 @@
         </form>
       </div>
 
-      <h2 class="successfulAdded"><%= flash[:notice] %></h2>
+      <%= "<h4 class=\"successfulUpdated\">#{flash[:notice]}</h4>".html_safe if !flash[:notice].nil? %>
       <%= yield %>
 
       <div class="wrapper actions">
@@ -72,7 +75,7 @@
     <footer>
       <div class="wrapper featuredOrg">
         <small class="letsHelpIt"><strong><%= link_to ('Let\'s Help it'), about_url  %></strong></small>
-        <small class="free">No rights reserved. <a href="#">Free code</a>.</small>
+        <small class="free"><%= t('rights')%>. <%= link_to t('free_code'), 'http://github.com/thoughtworks/letshelp.it' %>.</small>
         <div class="clear"></div>
       </div>
     </footer>
