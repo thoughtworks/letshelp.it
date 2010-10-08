@@ -51,7 +51,7 @@ public
 
     respond_to do |format|
       if @organization.save
-        flash[:notice] = t("organization.success_created")
+        flash[:notice] = '<h4 class="successfulAdded">' + t("organization.success_created") + '</h4>'
         format.html { redirect_to(@organization) }
       else
         @tag = Tag.new
@@ -67,7 +67,7 @@ public
 
     respond_to do |format|
       if @organization.update_attributes(params[:organization])
-        flash[:notice] = t("organization.success_updated")
+        flash[:notice] = '<h4 class="successfulUpdated">' + t("organization.success_updated") + '</h4>'
         format.html { redirect_to(@organization) }
       else
         format.html { render :layout => "main", :partial => "form", :locals => { :action => "Update" } } 

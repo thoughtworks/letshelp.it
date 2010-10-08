@@ -8,6 +8,7 @@
   <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cantarell:regular,italic,bold' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag 'style' %>
+  <%= stylesheet_link_tag 'niceforms-default' %>
   <!--[if lte IE 8]>
     <script src="/javascripts/html5.js"></script>
   <![endif]-->
@@ -18,22 +19,27 @@
 	</div>		
     
     <header>
+    	<nav>
+    		<div class="wrapper">
+    			<ul>
+    				<li><%= link_to 'Home', '/' %></li>
+    				<li><%= link_to t('about'), about_url %></li>
+    				<li class="forum"><%= link_to t('forum'), 'http://letshelpit.uservoice.com/forums/72267-general' %></li>
+					<li class="twitter"><%= link_to 'Twitter', 'http://www.twitter.com/letshelpit' %></li>
+					<li class="flickr"><a href="#">Flickr</a></li>
+				</ul>
+	    		<div class="locale">
+					<%= generate_locale_menu_html if controller.action_name == "index" %>
+				</div>
+				
+				<div class="clear"></div>
+    		</div>
+    	</nav>
 	    <div class="wrapper">
 			<h1 id="logo">
 				<a href="/"></a>
 			</h1>
-			<div class="locale">
-				<%= generate_locale_menu_html if controller.action_name == "index" %>
-			</div>
-			<nav class="social">
 			<div class="slogan"><%= t("subtitle") %></div>
-				<ul>
-					<li class="forum"><%= link_to t('forum'), 'http://letshelpit.uservoice.com/forums/72267-general' %></li>
-					<li class="twitter"><%= link_to 'Twitter', 'http://www.twitter.com/letshelpit' %></li>
-					<li class="flickr"><a href="#">Flickr</a></li>
-				</ul>
-				<div class="clear"></div>
-			</nav>
 			<div class="clear"></div>
 		</div>
 	</header>
@@ -64,17 +70,18 @@
 			</form>
 		</div>
 
-		<h2 class="successfulAdded"><%= flash[:notice] %></h2>
+		<%= flash[:notice] %>
 		<%= yield %>
 	</section>	
 	<footer>
 		<div class="wrapper featuredOrg">
-		<small class="letsHelpIt"><strong><%= link_to ('Let\' Help it'), about_url  %></strong> is a project idealized by <a href="#">TW-Brazil</a>.</small> <small class="free">No rights reserved. <a href="#">Free code</a>.</small>
+		<small class="letsHelpIt"><strong><%= link_to ('Let\' Help it'), about_url  %></strong>.</small> <small class="free"><%= t('rights')%>. <%= link_to t('free_code'), 'http://github.com/thoughtworks/letshelp.it' %>.</small>
 		<div class="clear"></div>
 		</div>
 	</footer>
 
   <%= javascript_include_tag 'uservoice' %>
   <%= javascript_include_tag 'analytics' %>
+  <%= javascript_include_tag 'niceforms' %>
   </body>
 </html>

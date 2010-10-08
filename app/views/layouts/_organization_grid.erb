@@ -1,10 +1,15 @@
 <div class="wrapper featuredOrg">
-  <% @organizations.each do |organization| %>
+	<%
+	
+	%>
+	
+  <% @organizations.each do |organization|
+   %>
     <% link_to organization do %>
-    <div class="bucket <%= cycle('left','right') %>">
+    <div class="bucket <%= cycle('left','normal','right') %>">
         <h3><%=h organization.name %></h3>
         <h4><%=h organization.city %> / <%=h organization.country %></h4>
-        <p><%=h organization.needs %></p>
+        <p><%=h truncate(organization.needs, 340, "...") %></p>
     </div>
     <% end %>
   <% end %>
