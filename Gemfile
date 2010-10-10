@@ -6,6 +6,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'friendly_id'
 gem 'babosa'
 gem 'RedCloth'
+gem 'truncate_html'
 
 group :test do
   gem 'thoughtbot-shoulda', :require => 'shoulda/rails'

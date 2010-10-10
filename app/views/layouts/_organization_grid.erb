@@ -4,7 +4,7 @@
       <div class="bucket <%= cycle('left','normal','right') %>">
         <h3><%= organization.name %></h3>
         <h4><%= organization.city %> / <%= organization.country %></h4>
-        <p><%= RedCloth.new(truncate(organization.needs, :length => 340)).to_html.html_safe %></p>
+        <p><%= truncate_html(RedCloth.new(organization.needs).to_html, :length => 340, :word_boundary => false).html_safe %></p>
       </div>
     <% end %>
   <% end %>
