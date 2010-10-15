@@ -6,7 +6,7 @@ Connect groups looking for NGO's to donate food, clothing, or even do volunteer 
 Requirements
 
 - Ruby 1.8.7 EE (we recommend RVM, from http://rvm.beginrescueend.com/)
-- Rails 3.0.0 (gem install -v=3.0.0 rails)
+- Rails 3.0.1 (gem install -v=3.0.1 rails)
 - sqlite3-ruby (gem install sqlite3-ruby)
 
 
