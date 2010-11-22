@@ -5,3 +5,11 @@ require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
 LetshelpIt::Application.load_tasks
+
+Rake::TestTask.new do |t|
+  t.name = 'test:acceptance'
+  t.libs << "test"
+  t.test_files = FileList['test/acceptance/*_spec.rb']
+  t.verbose = true
+end
+
