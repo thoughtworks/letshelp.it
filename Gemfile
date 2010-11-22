@@ -13,5 +13,6 @@ group :test do
   gem 'test-unit'
   gem 'rcov'
   gem 'ruby-prof'
+  gem 'selenium-webdriver'
 end
 
