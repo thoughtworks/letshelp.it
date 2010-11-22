@@ -9,7 +9,7 @@ LetshelpIt::Application.load_tasks
 Rake::TestTask.new do |t|
   t.name = 'test:acceptance'
   t.libs << "test"
-  t.test_files = FileList['test/acceptance/*_spec.rb']
+  t.test_files = FileList['test/acceptance/*_test.rb']
   t.verbose = true
 end
 
