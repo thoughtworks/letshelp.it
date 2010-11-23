@@ -6,13 +6,12 @@ require 'rake'
 
 LetshelpIt::Application.load_tasks
 
+task :'test:all' => [:'test:units', :'test:functionals', :'test:acceptance']
+
 task 'selenium' => [:start_selenium_server, :'test:acceptance', :stop_selenium_server]
 
-Rake::TestTask.new do |t|
-  t.name = 'test:acceptance'
-  t.libs << "test"
-  t.test_files = FileList['test/acceptance/*_test.rb']
-  t.verbose = true
+task :'test:acceptance' do
+  sh 'bundle exec spec test/acceptance --colour --format nested'
 end
 
 task :start_selenium_server do
