@@ -7,6 +7,7 @@ gem 'friendly_id'
 gem 'babosa'
 gem 'RedCloth'
 gem 'truncate_html'
+gem 'rspec', '1.3.1'
 
 group :test do
   gem 'thoughtbot-shoulda', :require => 'shoulda/rails'
