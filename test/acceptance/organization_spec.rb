@@ -1,12 +1,8 @@
-require 'acceptance/helper'
+require 'test/acceptance/helper'
 
-class OrganizationTest < Test::Unit::TestCase
-
-  def teardown
-    driver.close
-  end
-  
-  def test_new_organization_validation
+describe 'Organizations' do
+  after { driver.close }
+  it 'should validade a new organization' do
     expected_error_messages = [
       "Name can't be blank", 
       "Contact can't be blank", 
@@ -21,9 +17,8 @@ class OrganizationTest < Test::Unit::TestCase
     
     errors_list = driver.find_elements(:xpath => "//div[@id='errorExplanation']/ul/li")  
     displayed_errors_messages = errors_list.collect {|li| li.text}
-      
-    assert_equal expected_error_messages.sort, displayed_errors_messages.sort
+    
+    displayed_errors_messages.sort.should == expected_error_messages.sort
   end
-  
 end
 

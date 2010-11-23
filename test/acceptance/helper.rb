@@ -1,5 +1,5 @@
 require 'selenium-webdriver'
-require 'test/unit'
+require 'spec'
 
 module SeleniumHelper
   def driver
