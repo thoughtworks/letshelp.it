@@ -8,7 +8,7 @@ module SeleniumHelper
 end
 
 Spec::Runner.configure do |config|
-  config.after(:all) { driver.close }
+  config.after(:each) { driver.close }
   config.include SeleniumHelper
 end
 
