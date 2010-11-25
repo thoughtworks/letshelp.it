@@ -12,14 +12,6 @@ namespace :test do
   task :all => [:units, :functionals, :acceptance]
 
   task(:acceptance) do
-    require 'sqlite3'
-
-    db = SQLite3::Database.new "db/development.sqlite3"
-    
-    db.execute 'delete from organizations_tags'
-    db.execute 'delete from organizations'
-    db.execute 'delete from slugs'
-    
     sh 'bundle exec spec test/acceptance --colour --format nested'
   end
 

@@ -8,7 +8,18 @@ module SeleniumHelper
 end
 
 Spec::Runner.configure do |config|
-  config.after(:each) { driver.close }
+  config.after(:each) do
+    require 'sqlite3'
+
+    db = SQLite3::Database.new "db/development.sqlite3"
+    
+    db.execute 'delete from organizations_tags'
+    db.execute 'delete from organizations'
+    db.execute 'delete from slugs'
+    
+    driver.close
+  end
+  
   config.include SeleniumHelper
 end
 
