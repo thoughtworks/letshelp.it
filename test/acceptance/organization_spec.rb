@@ -1,11 +1,11 @@
 require 'test/acceptance/helper'
 
-describe 'Organizations' do
+describe 'Submitting organization' do
+  before { driver.navigate.to "http://localhost:3000/organizations/new" }
 
   it 'should validade a new organization' do
     expected_error_messages = ["Name", "Contact", "City", "Country", "Password", "Announcer", "Email"].collect {|field| "#{field} can't be blank"} 
   
-    driver.navigate.to "http://localhost:3000/organizations/new"
     driver.find_element(:id, 'organization_submit').click    
     
     errors_list = driver.find_elements(:xpath => "//div[@id='errorExplanation']/ul/li")  
@@ -13,5 +13,6 @@ describe 'Organizations' do
     
     displayed_errors_messages.sort.should == expected_error_messages.sort
   end
+
 end
 
