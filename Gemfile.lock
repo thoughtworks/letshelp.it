@@ -34,13 +34,25 @@ GEM
       activesupport (~> 3.0.0)
     babosa (0.2.0)
     builder (2.1.2)
+    capybara (0.4.0)
+      celerity (>= 0.7.9)
+      culerity (>= 0.2.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (>= 0.0.27)
+      xpath (~> 0.1.2)
+    celerity (0.8.4)
     childprocess (0.1.4)
       ffi (~> 0.6.3)
+    culerity (0.2.12)
+    diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
-    friendly_id (3.1.7)
+    friendly_id (3.1.8)
       babosa (~> 0.2.0)
     i18n (0.4.2)
     json_pure (1.4.6)
@@ -50,6 +62,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -71,7 +84,16 @@ GEM
       thor (~> 0.14.0)
     rake (0.8.7)
     rcov (0.9.9)
-    rspec (1.3.1)
+    rspec (2.1.0)
+      rspec-core (~> 2.1.0)
+      rspec-expectations (~> 2.1.0)
+      rspec-mocks (~> 2.1.0)
+    rspec-core (2.1.0)
+    rspec-expectations (2.1.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.1.0)
+    rspec-rails (2.1.0)
+      rspec (~> 2.1.0)
     ruby-prof (0.9.2)
     rubyzip (0.9.4)
     selenium-webdriver (0.1.0)
@@ -79,14 +101,16 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
+    shoulda (2.11.3)
     sqlite3-ruby (1.3.2)
-    test-unit (2.1.1)
+    test-unit (2.1.2)
     thor (0.14.6)
-    thoughtbot-shoulda (2.11.1)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     truncate_html (0.4.0)
     tzinfo (0.3.23)
+    xpath (0.1.2)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -94,13 +118,14 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   babosa
+  capybara
   friendly_id
   rails (= 3.0.1)
   rcov
-  rspec (= 1.3.1)
+  rspec-rails
   ruby-prof
   selenium-webdriver
+  shoulda
   sqlite3-ruby
   test-unit
-  thoughtbot-shoulda
   truncate_html
