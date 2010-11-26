@@ -6,17 +6,10 @@ require 'rake'
 
 LetshelpIt::Application.load_tasks
 
-task 'selenium' => ['test:start_selenium_server', 'test:acceptance', 'test:stop_selenium_server']
+task 'selenium' => ['test:acceptance']
 
 namespace :test do
   task :all => [:units, :functionals, :acceptance]
-
-  task(:acceptance) do
-    sh 'bundle exec spec test/acceptance --colour --format nested'
-  end
-
-  task(:start_selenium_server) { sh 'rails server -d'; sleep 10 }
-
-  task(:stop_selenium_server) { sh "kill -9 #{File.read('tmp/pids/server.pid')}" }
+  task('acceptance') { sh 'rspec spec'}
 end
 
