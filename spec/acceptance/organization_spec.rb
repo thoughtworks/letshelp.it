@@ -121,5 +121,29 @@ describe 'Editing organization' do
     has_content? 'Casa da Mae Joana'
   end  
 
+  pending 'should edit organization' do
+    #create organization to edit
+    visit "/organizations/new" 
+    fill_in 'organization[name]', :with => 'Casa da Mae Joana'
+    fill_in 'organization[contact]', :with => 'Fulano'
+    fill_in 'organization[city]', :with => 'Cidade'
+    fill_in 'organization[country]', :with => 'País'
+    fill_in 'organization[announcer]', :with => 'Announcer'
+    fill_in 'organization[password]', :with => 'password'
+    fill_in 'organization[email]', :with => 'a@a.com'
+    click_button 'organization_submit'
+  
+    #try to edit 
+    visit "/"
+    find(:xpath, "//div/h3").click
+    click_link 'Edit'  
+    fill_in 'pass_field', :with => 'senha'
+    click_button 'Validate'
+    #fill_in 'organization[city]', :with => 'Tangamandapio' #this doesn work to change content
+    find_field 'organization[city]'
+    #click_button 'organization_submit'
+    #page.should have_xpath "//h4[@class='successfulUpdated']"
+  end    
+
 end
 
