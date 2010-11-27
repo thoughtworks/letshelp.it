@@ -35,7 +35,7 @@ describe 'Submitting organization' do
     end
 
     it 'should tell invalid field' do
-      all(:xpath, "//div[@id='errorExplanation']/ul/li").first.text.should =~ /Email(.*)invalid/
+      find(:xpath, "//div[@id='errorExplanation']/ul/li").text.should =~ /Email(.*)invalid/
     end
 
     it 'should not show success message' do
