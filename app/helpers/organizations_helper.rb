@@ -2,7 +2,7 @@ module OrganizationsHelper
   require 'uri'
 
   def has_tag?(tag)
-    not @organization.nil? and @organization.tags.include?(tag)
+    @organization.tags.include?(tag) if @organization.present?
   end
 
   def compose_twitter_share_url()
@@ -15,3 +15,4 @@ module OrganizationsHelper
   end
 
 end
+
