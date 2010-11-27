@@ -100,5 +100,26 @@ describe 'Editing organization' do
     has_content? 'Invalid password'
   end  
 
+  it 'should validate correct password' do
+    #create organization to edit
+    visit "/organizations/new" 
+    fill_in 'organization[name]', :with => 'Casa da Mae Joana'
+    fill_in 'organization[contact]', :with => 'Fulano'
+    fill_in 'organization[city]', :with => 'Cidade'
+    fill_in 'organization[country]', :with => 'País'
+    fill_in 'organization[announcer]', :with => 'Announcer'
+    fill_in 'organization[password]', :with => 'password'
+    fill_in 'organization[email]', :with => 'a@a.com'
+    click_button 'organization_submit'
+  
+    #try to edit 
+    visit "/"
+    find(:xpath, "//div/h3").click
+    click_link 'Edit'  
+    fill_in 'pass_field', :with => 'senha'
+    click_button 'Validate'
+    has_content? 'Casa da Mae Joana'
+  end  
+
 end
 
