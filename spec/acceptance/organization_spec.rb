@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe 'Submitting organization' do
   before { visit "/organizations/new" }
 
@@ -58,46 +59,39 @@ describe 'Submitting organization' do
 end
 
 describe 'Editing organization' do
-before(:each) do
-  visit "/organizations/new"
-  fill_in 'organization[name]', :with => 'Casa da Mae Joana'
-  fill_in 'organization[contact]', :with => 'Fulano'
-  fill_in 'organization[city]', :with => 'Cidade'
-  fill_in 'organization[country]', :with => 'País'
-  fill_in 'organization[announcer]', :with => 'Announcer'
-  fill_in 'organization[password]', :with => 'password'
-  fill_in 'organization[email]', :with => 'a@a.com'
-  click_button 'organization_submit'
-  visit "/"
-end
-
-  it 'should validate wrong password' do
-
+  before(:each) do
+    visit "/organizations/new"
+    fill_in 'organization[name]', :with => 'Casa da Mae Joana'
+    fill_in 'organization[contact]', :with => 'Fulano'
+    fill_in 'organization[city]', :with => 'Cidade'
+    fill_in 'organization[country]', :with => 'País'
+    fill_in 'organization[announcer]', :with => 'Announcer'
+    fill_in 'organization[password]', :with => 'password'
+    fill_in 'organization[email]', :with => 'a@a.com'
+    click_button 'organization_submit'
+    visit "/"
     find(:xpath, "//div[@class='wrapper featuredOrg']/a/div").click
     click_link 'Edit'
+  end
+
+  it 'should validate wrong password' do
     fill_in 'pass_field', :with => 'XXX'
     click_button 'Validate'
     has_content? 'Invalid password'
   end
 
   it 'should validate empty password' do
-    find(:xpath, "//div[@class='wrapper featuredOrg']/a/div").click
-    click_link 'Edit'
     click_button 'Validate'
     has_content? 'Invalid password'
   end
 
   it 'should validate correct password' do
-    find(:xpath, "//div[@class='wrapper featuredOrg']/a/div").click
-    click_link 'Edit'
     fill_in 'pass_field', :with => 'senha'
     click_button 'Validate'
     has_content? 'Casa da Mae Joana'
   end
 
   it 'should edit organization' do
-    find(:xpath, "//div[@class='wrapper featuredOrg']/a/div").click
-    click_link 'Edit'
     fill_in 'pass_field', :with => 'password'
     click_button 'Validate'
     fill_in 'organization[city]', :with => 'Tangamandapio'
