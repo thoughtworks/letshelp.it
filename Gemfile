@@ -9,6 +9,8 @@ gem 'RedCloth'
 gem 'truncate_html'
 
 group :test do
+  gem 'autotest-rails'
+  gem 'autotest-growl'
   gem 'test-unit'
   gem 'rcov'
   gem 'factory_girl_rails'
@@ -17,5 +19,6 @@ group :test do
   gem 'shoulda'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'forgery'  
+  gem 'forgery'
 end
+
