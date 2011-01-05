@@ -138,7 +138,7 @@ DEPENDENCIES
   friendly_id
   rails (= 3.0.1)
   rcov
-  rspec-rails
+  rspec-rails (~> 2.4)
   ruby-prof
   selenium-webdriver
   shoulda
