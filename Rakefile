@@ -6,10 +6,3 @@ require 'rake'
 
 LetshelpIt::Application.load_tasks
 
-task 'selenium' => ['test:acceptance']
-
-namespace :test do
-  task :all => [:units, :functionals, :acceptance]
-  task('acceptance') { sh 'rspec spec'}
-end
-
