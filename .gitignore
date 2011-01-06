@@ -13,3 +13,4 @@ cache/*
 gems/*
 specifications/*
 .rvmrc
+doc
