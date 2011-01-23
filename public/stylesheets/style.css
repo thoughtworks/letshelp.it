@@ -178,7 +178,8 @@ h4.successfulUpdated {
 }
 
 h3 {
-  font-size: 2.5em;
+  font-size: 1.4em;
+  line-height: 1.2em;
   color: #555;
 }
 
@@ -250,7 +251,11 @@ input#search:hover {
 }
 
 .featuredOrg .bucket {
-  height: 320px;
+  height: 360px;
+}
+
+.featuredOrg .bucket:hover {
+	background: #FFF;
 }
 
 .featuredOrg .bucket h3 {
