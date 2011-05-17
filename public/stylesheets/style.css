@@ -8,7 +8,7 @@ html, body, * {
 }
 
 body {
-  background: white url(/images/bg.gif) repeat;
+  background: #E4D5B7;
   color: white;
   font: normal normal normal 12px/1.4em 'Trebuchet MS', Arial, sans-serif;
   font-weight: normal;
@@ -118,6 +118,8 @@ header div.slogan {
   line-height: 1.3em;
   float: right;
   margin-top: 40px;
+  margin-bottom: 20px;
+  margin-right: -20px;
 }
 
 header nav ul {
@@ -156,12 +158,10 @@ header nav li a:hover {
   border-radius: 10px;
 }
 
-#body .wrapper.helpWithAndFindOrg h2, h3 {
-  font-size: 3.1em;
-  line-height: 1em;
+#body .wrapper.helpWithAndFindOrg h2 {
+  font-size: 2.2em;
   font-family: "Harabara", Trebuchet MS, Arial, sans-serif;
   letter-spacing: 0.15em;
-  margin-bottom: 10px;
   text-shadow: 1px 1px 1px #000;
 }
 
@@ -209,8 +209,8 @@ h4 {
 }
 
 input.cityOrOrg, input#search {
-  padding: 10px;
-  font-size: 2.3em;
+  padding: 8px;
+  font-size: 1.5em;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
 }
@@ -345,7 +345,7 @@ small.free {
   background: url(/images/arrow.gif) no-repeat left center;
   padding-left: 15px;
   font-family: 'Trebuchet MS';
-  font-size: 0.5em;
+  font-size: 1em;
   margin-top: 10px;
   text-shadow: none;
   color: #333;
