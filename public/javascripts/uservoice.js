@@ -6,9 +6,9 @@ var uservoiceOptions = {
   showTab: true,  
   /* optional */
   alignment: 'right',
-  background_color:'#331200', 
+  background_color:'#74557F', 
   text_color: 'white',
-  hover_color: '#553422',
+  hover_color: '#7f5d8b',
   lang: $('#body_tag').attr('lang').replace('-','_')
 };
 
