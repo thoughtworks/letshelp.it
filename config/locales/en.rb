@@ -11,7 +11,7 @@
     :forum => "Forum",
     :about => "About",
     :rights => "No rights reserved",
-    :free_code => "Free code",
+    :free_code => "Open source code at github",
     :wrong_password => "Invalid password",
     :no_organization_found => "No organization was found",
     :title => "Let's Help It!",

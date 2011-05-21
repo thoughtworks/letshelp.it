@@ -11,7 +11,7 @@
     :forum => "Fórum",
     :about => "Sobre",
     :rights => "Nenhum direito reservado",
-    :free_code => "Código livre",
+    :free_code => "Código aberto no github",
     :wrong_password => "Senha inválida",
     :no_organization_found => "Não foi encontrada nenhuma organização",
     :title => "Let's Help It!",
@@ -53,7 +53,7 @@
     },
     :twitter_share => {
       :please_help => "Por favor ajude ",
-      :button => "Compartilhe com Twitter"
+      :button => "Compartilhe no Twitter"
     },
     #transformed from http://github.com/svenfuchs/rails-i18n/tree/master/rails/locale/pt-BR.yml
     :date => {
@@ -84,7 +84,7 @@
           :other => "menos de %{count} segundos"
         },
         :x_seconds => {
-          :one => "1 segun do",
+          :one => "1 segundo",
           :other => "%{count} segundos"
         }, 
         :less_than_x_minutes => {
