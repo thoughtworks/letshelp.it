@@ -9,7 +9,7 @@
     </p>
     
     <p>
-      <label><%= t("org_form.contact") %><span class="smoothText">(<%=t("contact_info")%>)</span></label
+      <label><%= t("org_form.contact") %><span class="smoothText">(<%=t("contact_info")%>)</span></label>
       <%= f.text_field :contact %>
     </p>
     <p>
@@ -55,7 +55,7 @@
       </p>
     </div>
     <div class="btnSubmit">
-      <%= f.submit action , :value => controller.action_name == "new" ? t("org_form.create_button") : t("org_form.update_button")%>
+      <%= f.submit action , :value => (controller.action_name == "new" || controller.action_name == "create") ? t("org_form.create_button") : t("org_form.update_button")%>
     </div>
   </div>
 
