@@ -4,9 +4,6 @@
       <%= @organization.name %>
       <div><%= @organization.city %> / <%= @organization.country %></div>
     </h3>
-    <div class="maintenance">
-      <%= link_to t('org_form.edit_button'), edit_organization_path(@organization), :class => 'link edit'  %>
-    </div>
     <div class="waysOfContact">
       <strong><%=t("org_form.contact")%>:</strong> <%= @organization.contact %>
     </div>
@@ -24,6 +21,8 @@
     <div class="tools">
       <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-text="<%= compose_twitter_share_text() %>" data-via="letshelpit"></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script> 
       <div class="fb-like" data-href="<%= compose_facebook_like_url() %>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+      <br />
+      <%= link_to t('org_form.edit_button'), edit_organization_path(@organization), :class => 'link edit'  %>
     </p>
   </div>
   <div class="clear"></div>
