@@ -352,17 +352,18 @@ small.free {
 }
 
 .orgDescription a.edit {
-  color: red;
+  color: #74557F;
 } 
 .orgDescription a.edit:hover {
-  border-bottom: 1px dotted red;  
+  background: #74557F;
+  color: white;
 }
 .orgDescription a.share {
-  color: #3CF;
+  color: #74557F;
 }
 
 .orgDescription a.share:hover {
-  background: #3CF;
+  background: #74557F;
   color: white;
 }
 
